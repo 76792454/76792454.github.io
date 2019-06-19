@@ -5,8 +5,6 @@ function randomColor() {
 /* 轮播背景图片 */
 $(function () {
     $.backstretch([  
-          "/images/background/saber1.jpg",
-          "/images/background/saber2.jpg",
-          "/images/background/bg1.jpg"
+          "/images/touxiang.png",
     ], { duration: 60000, fade: 1500 });  
 });

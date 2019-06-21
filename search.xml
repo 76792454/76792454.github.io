@@ -4,6 +4,12 @@
     <title><![CDATA[a]]></title>
     <url>%2Fposts%2Fe8b7be43%2F</url>
     <content type="text"><![CDATA[aaa]]></content>
+      <categories>
+        <category>b</category>
+      </categories>
+      <tags>
+        <tag>a</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[plan]]></title>

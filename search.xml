@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Upload Blog]]></title>
+    <url>%2Fposts%2F19bd81cd%2F</url>
+    <content type="text"><![CDATA[上传博客hexo new “新的文章”hexo g 生成新的静态文件hexo d 发布到GitHub]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[summerplan]]></title>
     <url>%2Fposts%2Fc27ae11f%2F</url>
     <content type="text"><![CDATA[暑假计划: 1:学习SSM框架 2:写一个demo(SSM) Fighting!]]></content>

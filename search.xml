@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[springdemo]]></title>
+    <url>%2Fposts%2F10e6cf28%2F</url>
+    <content type="text"><![CDATA[初学Spring的博客https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/ Spring的教程 http://how2j.cn/ 进阶Spring的博客https://www.cnblogs.com/best/tag/Spring/]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Upload Blog]]></title>
     <url>%2Fposts%2F19bd81cd%2F</url>
     <content type="text"><![CDATA[上传博客hexo new “新的文章”hexo g 生成新的静态文件hexo d 发布到GitHub]]></content>

@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[springdemo]]></title>
     <url>%2Fposts%2F10e6cf28%2F</url>
-    <content type="text"><![CDATA[初学Spring的博客https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/ Spring的教程 http://how2j.cn/ 进阶Spring的博客https://www.cnblogs.com/best/tag/Spring/]]></content>
+    <content type="text"><![CDATA[初学Spring的博客https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/ Spring的教程 http://how2j.cn/ 进阶Spring的博客https://www.cnblogs.com/best/tag/Spring/ Spring中的注解问题@Component(value = “student1”)public class Student { @Value(&quot;1&quot;) int id; @Value(&quot;student_name_1&quot;) String name; // getter and setter} @Component @Value相当于 @ComponentScan 相当于@Component声明了一个bean 但是Spring loc 不知道有这个bean 的存在 所以需要一个测试类去扫描所有类带有@Component @ComponentScanpublic class StudentConfig {} 默认情况下测试类只会扫描当前包下的@Component扫描指定包：@ComponentScan(basePackages = “pojo”)扫描指定包下的类@ComponentScan(basePackageClasses = pojo.Student.class)或者也可以在 XML 文件中声明去哪里做扫描&lt;context:component-scan base-package=”pojo” /&gt;&lt;context:component-scan base-package=”service” /&gt;@Autowired 自动装配 可以设置Value为某个类的对象@Value不能 设置对象]]></content>
       <categories>
         <category>spring</category>
       </categories>

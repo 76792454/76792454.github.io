@@ -371,7 +371,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  37
+				  212
 				</span>
               
 
@@ -414,6 +414,17 @@
 <p>Spring的教程</p>
 <p><a href="http://how2j.cn/" target="_blank" rel="noopener">http://how2j.cn/</a></p>
 <p>进阶Spring的博客<br><a href="https://www.cnblogs.com/best/tag/Spring/" target="_blank" rel="noopener">https://www.cnblogs.com/best/tag/Spring/</a></p>
+<p>Spring中的注解问题<br>@Component(value = “student1”)<br>public class Student {</p>
+<pre><code>@Value(&quot;1&quot;)
+int id;
+@Value(&quot;student_name_1&quot;)
+String name;
+
+// getter and setter</code></pre><p>}
+@Component @Value相当于<br><bean name="student1" class="pojo.Student"><br>    <property name="id" value="1"><br>    <property name="name" value="student_name_1"><br></property></property></bean></p>
+<p>@ComponentScan 相当于@Component声明了一个bean 但是Spring loc 不知道有这个bean 的存在 所以<br>需要一个测试类去扫描所有类带有@Component </p>
+<p>@ComponentScan<br>public class StudentConfig {<br>}
+默认情况下测试类只会扫描当前包下的@Component<br>扫描指定包：<br>@ComponentScan(basePackages = “pojo”)<br>扫描指定包下的类<br>@ComponentScan(basePackageClasses = pojo.Student.class)<br>或者也可以在 XML 文件中声明去哪里做扫描<br>&lt;context:component-scan base-package=”pojo” /&gt;<br>&lt;context:component-scan base-package=”service” /&gt;<br>@Autowired 自动装配 可以设置Value为某个类的对象<br>@Value不能 设置对象</p>
 
           
         

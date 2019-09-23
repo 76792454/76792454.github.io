@@ -285,6 +285,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/7273cdc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晚风">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wanfeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/7273cdc/" itemprop="url">Maven</a></h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-23T10:59:03+08:00">
+                2019-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Maven/" itemprop="url" rel="index">
+                    <span itemprop="name">Maven</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+					 
+				<span class="post-meta-item-icon">
+				  <i class="fa fa-file-word-o"></i>
+				</span>
+				
+				  <span class="post-meta-item-text">Words count in article&#58;</span>
+				
+				<span title="Words count in article">
+				  441
+				</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>官网：<a href="http://maven.apache.org/" target="_blank" rel="noopener">http://maven.apache.org/</a></p>
+<p>教程：<a href="https://www.yiibai.com/maven/" target="_blank" rel="noopener">https://www.yiibai.com/maven/</a><br>      <a href="https://www.cnblogs.com/best/p/9676515.html" target="_blank" rel="noopener">https://www.cnblogs.com/best/p/9676515.html</a><br>      <a href="https://www.bilibili.com/video/av31623453/" target="_blank" rel="noopener">https://www.bilibili.com/video/av31623453/</a><br>      <a href="https://www.cnblogs.com/best/p/9676515.html#_label0" target="_blank" rel="noopener">https://www.cnblogs.com/best/p/9676515.html#_label0</a></p>
+<p>Maven库：<a href="http://repo2.maven.org/maven2/" target="_blank" rel="noopener">http://repo2.maven.org/maven2/</a> </p>
+<p>中央仓库资源：</p>
+<p>寻找jar包经常用的<br><a href="http://mvnrepository.com/" target="_blank" rel="noopener">http://mvnrepository.com/</a></p>
+<p><a href="https://search.maven.org/" target="_blank" rel="noopener">https://search.maven.org/</a></p>
+<p>创建Maven项目并且部署在Tomcat上运行</p>
+<p><a href="https://www.jianshu.com/p/501f85bc4288" target="_blank" rel="noopener">https://www.jianshu.com/p/501f85bc4288</a></p>
+<p>将其他的项目转成Maven项目<br>右键点击项目名字选择Add Framework support</p>
+<p>坐标：</p>
+<p>groupId , artifactId , version 三个元素是项目的坐标，唯一的标识这个项目。</p>
+<p>groupId 项目所在组，一般是组织或公司</p>
+<p>artifactId 是当前项目在组中的唯一ID；</p>
+<p>version 表示版本，SNAPSHOT表示快照，表示此项目还在开发中，不稳定。</p>
+<p>groupId 和实际项目不一定是一一对应的，maven 有模块的概念，例如 spring-core, spring-context…；groupId 也不应该只对应公<br>司或组织名，建议具体到项目名，因为公司或者组织下有多个项目，而artifactId只能代表模块名。</p>
+<p>运行Maven项目需要在Run下的Edit configratuions中配置Deployment选择这个war exploded结尾的</p>
+<p>不能添加Servlet的解决方法<br>1：打开项目描述.iml文件，指定源代码目录：<br>2：<sourceroots><br>     <root url="file://$MODULE_DIR$/src/main/java"><br>   </root></sourceroots></p>
+<p>模块间的依赖参考：<a href="https://www.cnblogs.com/best/p/9676515.html#_label0" target="_blank" rel="noopener">https://www.cnblogs.com/best/p/9676515.html#_label0</a><br>假如一道题的解法：<br>整个解法是一个整体 就是父模块<br>可能里边用到很多方面的函数 就是子模块<br>里边用到的函数可能还用到了变量 所以函数依赖于变量</p>
+<p>将项目转化为idea项目<br>mvn idea:idea<br>编译,将Java 源程序编译成 class 字节码文件<br>mvn compile<br>打包,动态 web工程打 war包，Java工程打 jar 包<br>mvn pakage<br>只打jar包：mvn jar:jar<br>只打war包：mvn war:war</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/e2756c2c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1237,7 +1429,7 @@ Fighting!    </code></pre>
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1248,7 +1440,7 @@ Fighting!    </code></pre>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1259,7 +1451,7 @@ Fighting!    </code></pre>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

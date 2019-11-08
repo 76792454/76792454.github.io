@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="spring,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="初学Spring的博客https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/ Spring的教程 http://how2j.cn/ 进阶Spring的博客https://www.cnblogs.com/best/tag/Spring/ Spring中的注解问题@Component(value = “student1”)public">
-<meta name="keywords" content="spring">
+<meta name="description" content="Spring的博客https://www.cnblogs.com/best/tag/Spring/ Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来 1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Prox">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springdemo">
+<meta property="og:title" content="springAop">
 <meta property="og:url" content="http://yoursite.com/posts/10e6cf28/index.html">
 <meta property="og:site_name" content="Wanfeng">
-<meta property="og:description" content="初学Spring的博客https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/ Spring的教程 http://how2j.cn/ 进阶Spring的博客https://www.cnblogs.com/best/tag/Spring/ Spring中的注解问题@Component(value = “student1”)public">
+<meta property="og:description" content="Spring的博客https://www.cnblogs.com/best/tag/Spring/ Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来 1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Prox">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-29T03:30:52.763Z">
+<meta property="og:updated_time" content="2019-11-07T08:29:44.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="springdemo">
-<meta name="twitter:description" content="初学Spring的博客https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/ Spring的教程 http://how2j.cn/ 进阶Spring的博客https://www.cnblogs.com/best/tag/Spring/ Spring中的注解问题@Component(value = “student1”)public">
+<meta name="twitter:title" content="springAop">
+<meta name="twitter:description" content="Spring的博客https://www.cnblogs.com/best/tag/Spring/ Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来 1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Prox">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>springdemo | Wanfeng</title>
+  <title>springAop | Wanfeng</title>
   
 
 
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">springdemo</h1>
+          <h1 class="post-title" itemprop="name headline">springAop</h1>
         
 
         <div class="post-meta">
@@ -369,7 +369,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  624
+				  553
 				</span>
               
 
@@ -406,75 +406,28 @@
       
 
       
-        <p>初学Spring的博客<br><a href="https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/" target="_blank" rel="noopener">https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/</a></p>
-<p>Spring的教程</p>
-<p><a href="http://how2j.cn/" target="_blank" rel="noopener">http://how2j.cn/</a></p>
-<p>进阶Spring的博客<br><a href="https://www.cnblogs.com/best/tag/Spring/" target="_blank" rel="noopener">https://www.cnblogs.com/best/tag/Spring/</a></p>
-<p>Spring中的注解问题<br>@Component(value = “student1”)<br>public class Student {</p>
-<pre><code>@Value(&quot;1&quot;)
-int id;
-@Value(&quot;student_name_1&quot;)
-String name;
-
-// getter and setter</code></pre><p>}
-@Component @Value相当于</p>
-<bean name="student1" class="pojo.Student">
-    <property name="id" value="1">
-    <property name="name" value="student_name_1">
-</property></property></bean>
-
-<p>@ComponentScan 相当于@Component声明了一个bean 但是Spring loc 不知道有这个bean 的存在 所以<br>需要一个测试类去扫描所有类带有@Component </p>
-<p>@ComponentScan<br>public class StudentConfig {<br>}
-默认情况下测试类只会扫描当前包下的@Component<br>扫描指定包：<br>@ComponentScan(basePackages = “pojo”)<br>扫描指定包下的类<br>@ComponentScan(basePackageClasses = pojo.Student.class)<br>或者也可以在 XML 文件中声明去哪里做扫描<br>&lt;context:component-scan base-package=”pojo” /&gt;<br>&lt;context:component-scan base-package=”service” /&gt;<br>@Autowired 自动装配 可以设置Value为某个类的对象<br>@Value不能 设置对象</p>
+        <p>Spring的博客<br><a href="https://www.cnblogs.com/best/tag/Spring/" target="_blank" rel="noopener">https://www.cnblogs.com/best/tag/Spring/</a></p>
 <p>Aop简单的使用<br><a href="https://www.cnblogs.com/wmyskxz/p/8835243.html" target="_blank" rel="noopener">https://www.cnblogs.com/wmyskxz/p/8835243.html</a></p>
-<p>例如包租婆和租房客和中介之间的关系</p>
-<p>包租婆：                中介：<br>        带租客看房              带租客看房<br>        签合同                  谈价格<br>        谈价格                  交钥匙<br>        收房租<br>        交钥匙</p>
-<p>那么对于包租婆这个类来说 签合同和收房租是他的核心业务<br>带租客看房，谈价格，交钥匙 就是切面<br>切面 = 切入点+通知<br>对于这个例子来说切入点就是包租婆的service方法</p>
-<p>@Component(“landlord”)<br>public class Landlord {</p>
-<pre><code>public void service() {
-    // 仅仅只是实现了核心的业务功能
-    System.out.println(&quot;签合同&quot;);
-    System.out.println(&quot;收房租&quot;);
-}</code></pre><p>}        </p>
-<p>@Component<br>@Aspect //注册切面用于拦截包租婆的service的方法<br>class Broker {</p>
-<pre><code>@Before(&quot;execution(* pojo.Landlord.service())&quot;)
-public void before(){
-    System.out.println(&quot;带租客看房&quot;);
-    System.out.println(&quot;谈价格&quot;);
-}
+<p>代理模式：<br>主要是把业务逻辑与一些与业务不相关的代码分离出来</p>
+<p>1：静态代理<br>利用接口的形式(业务逻辑)<br>将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中</p>
+<p>2：利用JDK内置的Proxy<br>用一个静态代理类去实现InvocationHandler </p>
+<p>3：利用cglib实现<br>用一个动态代理类去实现MethodInterceptor </p>
+<p>AOP（动态代理的AOP）：<br>前置通知实现MethodBeforeAdvice<br>后置通知实现AfterReturningAdvice<br>环绕童子实现MethodInterceptor<br>//实例化Spring代理工厂<br>ProxyFactory factory=new ProxyFactory();<br>//设置被代理的对象<br>factory.setTarget(new Math());<br>//添加通知，横切逻辑<br>factory.addAdvice(new BeforeAdvice());<br>factory.addAdvice(new AfterAdvice());<br>factory.addAdvice(new SurroundAdvice());<br>//从代理工厂中获得代理对象<br>IMath math=(IMath) factory.getProxy();<br>使用xml配置动态代理的aop</p>
+<!-- 被代理的目标对象 -->
+<pre><code>&lt;bean id=&quot;target&quot; class=&quot;com.zhangguo.Spring041.aop06.Math&quot;&gt;&lt;/bean&gt;
+&lt;!--通知、横切逻辑--&gt;
+&lt;bean id=&quot;advice&quot; class=&quot;com.zhangguo.Spring041.aop06.AfterAdvice&quot;&gt;&lt;/bean&gt;
+&lt;!--代理对象 --&gt;
+&lt;!--interceptorNames 通知数组 --&gt;
+&lt;!--p:target-ref 被代理的对象--&gt;
+&lt;!--p:proxyTargetClass 被代理对象是否为一个类，如果是则使用cglib,否则使用jdk动态代理  --&gt;
+&lt;bean id=&quot;proxy&quot; class=&quot;org.springframework.aop.framework.ProxyFactoryBean&quot;
+    p:interceptorNames=&quot;advice&quot;
+    p:target-ref=&quot;target&quot;
+    p:proxyTargetClass=&quot;true&quot;&gt;&lt;/bean&gt;</code></pre><p>aop表达式类型<br>execution<br>//com.zhangguo.Spring052.aop03包下所有类的所有方法被切入<br>    @After(“execution(* com.zhangguo.Spring052.aop03.<em>.</em>(..))”)<br>within<br>     //com.zhangguo.Spring052.aop03包下所有类的所有方法被切入<br>    @After(“within(com.zhangguo.Spring052.aop03.*)”)<br>this<br>    //实现了IMath接口的代理对象的任意连接点<br>    @After(“this(com.zhangguo.Spring052.aop03.IMath)”)<br>target</p>
+<p>args<br>    //要求方法有两个int类型的参考才会被织入横切逻辑<br>    @After(“args(int,int)”)<br>bean</p>
+<p>注解配置AOP<br>在通知类上加<br>@Component<br>@Aspect<br>声明这个类是切面<br>在方法上@Befor After…<br>在XML中配置<br>&lt;aop:aspectj-autoproxy proxy-target-class=”true”&gt;<br>proxy-target-class proxy-target-class=”true”属性表示被代理的目标对象是一个类，而非实现了接口的类，主要是为了选择不同的代理方式。</p>
 
-@After(&quot;execution(* pojo.Landlord.service())&quot;)
-public void after(){
-    System.out.println(&quot;交钥匙&quot;);
-}
-//使用Around环绕通知
-@Around(&quot;execution(* bean.Landlord.service())&quot;)
-public void Around(ProceedingJoinPoint joinPoint){
-    System.out.println(&quot;带租客看房&quot;);
-    System.out.println(&quot;谈价格&quot;);
-    try {
-        joinPoint.proceed();//调用拦截的方法 就是包租婆的service方法
-    } catch (Throwable throwable) {
-        throwable.printStackTrace();
-    }
-    System.out.println(&quot;交钥匙&quot;);
-}</code></pre><p>}
-//在xml文件中声明扫描Component的包<br> &lt;context:component-scan base-package=”aspect” /&gt;<br> &lt;context:component-scan base-package=”pojo” /&gt;</p>
-<p> <a href="aop:aspectj-autoproxy/" target="_blank" rel="noopener">aop:aspectj-autoproxy/</a><br>    测试代码<br>     public static void main(String[] args) {</p>
-<pre><code>    ApplicationContext context =
-            new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
-    Landlord landlord = (Landlord) context.getBean(&quot;landlord&quot;, Landlord.class);
-    landlord.service();
-
-}</code></pre><p>利用XML注册切面</p>
-<!-- 装配 Bean-->
-<bean name="landlord" class="pojo.Landlord">
-<bean id="broker" class="aspect.Broker">
-
-<!-- 配置AOP -->
-<p><a href="aop:config" target="_blank" rel="noopener">aop:config</a><br>    <!-- where：在哪些地方（包.类.方法）做增加 --><br>    &lt;aop:pointcut id=”landlordPoint”<br>                  expression=”execution(* pojo.Landlord.service())”/&gt;<br>    <!-- what:做什么增强 --><br>    &lt;aop:aspect id=”logAspect” ref=”broker”&gt;<br>        <!-- when:在什么时机（方法前/后/前后） --><br>        &lt;aop:around pointcut-ref=”landlordPoint” method=”around”/&gt;<br>    <br></p>
-<p>参考博客<br><a href="https://www.cnblogs.com/wmyskxz/p/8835243.html" target="_blank" rel="noopener">https://www.cnblogs.com/wmyskxz/p/8835243.html</a></p>
-</bean></bean>
       
     </div>
     
@@ -491,7 +444,7 @@ public void Around(ProceedingJoinPoint joinPoint){
       
         <div class="post-tags">
           
-            <a href="/tags/spring/" rel="tag"># spring</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -586,7 +539,7 @@ public void Around(ProceedingJoinPoint joinPoint){
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -597,7 +550,7 @@ public void Around(ProceedingJoinPoint joinPoint){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -608,7 +561,7 @@ public void Around(ProceedingJoinPoint joinPoint){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

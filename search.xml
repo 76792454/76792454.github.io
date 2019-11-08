@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SSMDemo]]></title>
+    <url>%2Fposts%2Ff21c6577%2F</url>
+    <content type="text"><![CDATA[jsp跳转到Controller 路径丢失项目名http://localhost:8080/SsmDemo_war_exploded/index.jsphttp://localhost:8080/SsmDemo_war_exploded/Controller 丢失SsmDemo_war_exploded 解决办法https://blog.csdn.net/qq_17213067/article/details/74452169 修改路径： ${pageContext.request.contextPath}/Controller http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=#{stu.id}http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=${stu.id} JSP Controller互相传值问题https://www.cnblogs.com/friends-wf/p/3801120.html 从Controller传值到Jsp 参数获取不到 加这个标签&lt;%@ page isELIgnored=”false” %&gt;SSM整合Democnblogs.com/charlypage/p/9163857.html1 Java类: 包: Controller(处理用户的提交申请然后请求Model返回Modelandview 然后处理驶入) mapper(数据库映射类) pojo (javabean) service(包含两个东西service接口(数据库访问封装方法) service接口实现类(实现service接口的方法 在这些方法中再去调用mapper包下的class的方法)配置文件: Spring配置文件(applicationContext.xml) SpringMVC配置文件(applicationContext-mvc.xml) Mybatis配置文件（mybatis-config.xml）(可以省略 省略的内容在Spring配置文件中配置) mapper配置文件(Javabean类的名字+mapper.xml)mybatis数据库映射配置文件 namespace:映射类的具体路径(XXXMapper)) web.xml配置文件 Maven引入jar包(pom.xml) db.properties上边3个都在resources文件下配置 最后一个在resources下创建文件夹mapper下配置视图文件: view(WEB-INF下创建的文件夹)存放视图文件 application.xml 读取db.properties 注解开发 扫描注解包 数据源(datasource) 创建sqlSessionFactory ==&gt; mybatis核心配置文件的读取 扫描mybatis的mapper接口路径 事务处理 application-mvc.xml 开启注解 扫描 过滤掉js, jpg, png, css, 静态文件 开启mvc 地址解析器 mybatis-config.xml（注意各个标签的顺序） 地址解析器 开启二级缓存 web.xml（注意各个标签的顺序） 读取除了mvc外的配置文件 整个web容器的动向由这个监听器进行监听. 这个监听器可以监听项目的启动. 从而直接加载核心配置文件 filter(设置utf-8编码用) 配置DispatcherServlet分发器（SpringMVC）]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MavenJar]]></title>
+    <url>%2Fposts%2F12cb9b35%2F</url>
+    <content type="text"><![CDATA[org.slf4j slf4j-api 1.7.12 ch.qos.logback logback-core 1.1.1 provided &lt;!--实现slf4j接口并整合--&gt; &lt;dependency&gt; &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt; &lt;artifactId&gt;logback-classic&lt;/artifactId&gt; &lt;version&gt;1.1.1&lt;/version&gt; &lt;scope&gt;provided&lt;/scope&gt; &lt;/dependency&gt; &lt;!--druid==&gt;阿里巴巴数据库连接池--&gt; &lt;dependency&gt; &lt;groupId&gt;com.alibaba&lt;/groupId&gt; &lt;artifactId&gt;druid&lt;/artifactId&gt; &lt;version&gt;1.0.25&lt;/version&gt; &lt;/dependency&gt; &lt;!-- C3p0数据连接池--&gt; &lt;dependency&gt; &lt;groupId&gt;com.mchange&lt;/groupId&gt; &lt;artifactId&gt;c3p0&lt;/artifactId&gt; &lt;version&gt;0.9.5.2&lt;/version&gt; &lt;/dependency&gt; !--2.dao框架:MyBatis依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;org.mybatis&lt;/groupId&gt; &lt;artifactId&gt;mybatis&lt;/artifactId&gt; &lt;version&gt;3.3.0&lt;/version&gt; &lt;/dependency&gt; &lt;!--mybatis自身实现的spring整合依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;org.mybatis&lt;/groupId&gt; &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt; &lt;version&gt;1.3.2&lt;/version&gt; &lt;/dependency&gt; &lt;!--3.Servlet web相关依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;taglibs&lt;/groupId&gt; &lt;artifactId&gt;standard&lt;/artifactId&gt; &lt;version&gt;1.1.2&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;jstl&lt;/groupId&gt; &lt;artifactId&gt;jstl&lt;/artifactId&gt; &lt;version&gt;1.2&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt; &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt; &lt;version&gt;2.5.4&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;javax.servlet&lt;/groupId&gt; &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt; &lt;version&gt;3.1.0&lt;/version&gt; &lt;scope&gt;provided&lt;/scope&gt; &lt;!--4:spring依赖--&gt; &lt;!--1)spring核心依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-core&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-beans&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-context&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;!--2)spring dao层依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-tx&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;!--3)springweb相关依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-web&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;!--4)spring test相关依赖--&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-test&lt;/artifactId&gt; &lt;version&gt;4.3.14.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.12&lt;/version&gt; &lt;scope&gt;runtime&lt;/scope&gt; &lt;/dependency&gt; &lt;!--Aop要导入的包--&gt; &lt;dependency&gt; &lt;groupId&gt;org.aspectj&lt;/groupId&gt; &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt; &lt;version&gt;1.8.9&lt;/version&gt; &lt;/dependency&gt; &lt;!-- https://mvnrepository.com/artifact/org.json/json --&gt; &lt;dependency&gt; &lt;groupId&gt;org.json&lt;/groupId&gt; &lt;artifactId&gt;json&lt;/artifactId&gt; &lt;version&gt;20170516&lt;/version&gt; &lt;/dependency&gt;]]></content>
+      <categories>
+        <category>MavenJar</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringMybatis]]></title>
+    <url>%2Fposts%2F1d1f67ca%2F</url>
+    <content type="text"><![CDATA[Spring简单整合Mybatis1：在Pom.xml添加Spring核心，AOP，JDBC，MyBatis-Spring，Mybatis等jar包。2：实现db.properties数据库配置文件 MybatisConf.xml Mybatis配置文件 Mapper映射文件3：创建Pojo 数据访问接口 数据访问接口实现类4：配置SpringConf.xml 配置Spring配置文件MybatisConf.xml可以不加标签具体SpringConf.xml文件 &lt;context:property-placeholder location=”db.properties” /&gt; &lt;!–注入MybatisConf.xml文件 value为文件的位置&gt; &lt;/bean&gt; &lt;!--配置映射器--&gt; &lt;bean id=&quot;userMapper&quot; class=&quot;org.mybatis.spring.mapper.MapperFactoryBean&quot;&gt; &lt;!--实现mapper的接口（自己写的）--&gt; &lt;property name=&quot;mapperInterface&quot; value=&quot;dao.UserMapper&quot;/&gt; &lt;property name=&quot;sqlSessionFactory&quot; ref=&quot;sqlSessionFactory&quot;/&gt; &lt;/bean&gt; 主函数调用 ApplicationContext acx = new ClassPathXmlApplicationContext(“SpringConf.xml”); //这里的UserMapper为接口类 UserMapper userMapper = (UserMapper) acx.getBean(“userMapper”); User user = userMapper.getUserById(1); System.out.println(user); Spring整合Mybatis升级版 去掉MyBatisCfg.xml配置文件只需要修改Spring配置文件里的SqlSessionFactory添加 &lt;!–指定映射文件 &lt;!–如果是注解实现的映射那么配置mapperLocations改为 &lt;!--自动扫描映射接口 把Mapper标签改为--&gt; &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt; &lt;!-- 指定sql会话工厂，在上面配置过的 --&gt; &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;&gt;&lt;/property&gt; &lt;!-- 指定基础包，即自动扫描com.zhangguo.Spring61.mapping这个包以及它的子包下的所有映射接口类 --&gt; &lt;property name=&quot;basePackage&quot; value=&quot;com.zhangguo.Spring61.mapping&quot;&gt;&lt;/property&gt; &lt;/bean&gt;]]></content>
+      <categories>
+        <category>SpringMybatis</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[springLoc]]></title>
+    <url>%2Fposts%2F18d6d006%2F</url>
+    <content type="text"><![CDATA[Spring的博客https://www.cnblogs.com/best/tag/Spring/Spring源码分析https://www.cnblogs.com/warehouse/tag/%E6%A1%86%E6%9E%B6/default.html?page=1使用注解配置Bean在POJO的上边配置@Component在Spring配置文件中在那个包下扫描带有注解的bean&lt;context:component-scan base-package=””/&gt;具体的在某个包下排除某个类看博客 自动装配@Autowired在容器中的bean中根据类型自动注入值也可也和@Qualifier(“XXX”)配合使用 XXX代表bean的名字@Resource装配顺序 如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常 如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常 如果指定了type，则从上下文中找到类型匹配的唯一bean进行装配，找不到或者找到多个，都会抛出异常 如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配； 纯注解配置loc 1：定义数据库访问接口/** 图书数据访问接口 / public interface IBookDAO { /** 添加图书 / public String addBook(String bookname);} 2：实现数据库接口/** 图书数据访问实现类 / @Repositorypublic class BookDAO implements IBookDAO { public String addBook(String bookname) { return &quot;添加图书&quot;+bookname+&quot;成功！&quot;; }} 3：service类/** 图书业务类 / @Servicepublic class BookService { @Resource IBookDAO bookDAO; public void storeBook(String bookname){ System.out.println(&quot;图书上货&quot;); String result=bookDAO.addBook(bookname); System.out.println(result); }} 4：定义一个替代xml的ApplicationCfg容器类/** 容器的配置类 / @Configuration@ComponentScan(basePackages=”com.zhangguo.Spring051.ioc06”)public class ApplicationCfg { @Bean public User getUser(){ return new User(&quot;成功&quot;); }} @Configuration相当于配置文件中的，ComponentScan相当于配置文件中的context:component-scan，属性也一样设置 ,@Bean相当于，只能注解在方法和注解上，一般在方法上使用，源码中描述：@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})，方法名相当于id。中间使用到了User，User类的代码如下：5：数据访问 ApplicationContext ctx=new AnnotationConfigApplicationContext(ApplicationCfg.class); BookService bookservice=ctx.getBean(BookService.class); bookservice.storeBook(“《Spring MVC权威指南 第四版》”);具体的参考博客]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mybatis]]></title>
+    <url>%2Fposts%2Fda3e1361%2F</url>
+    <content type="text"><![CDATA[教程 https://www.cnblogs.com/best/tag/Mybatis/官方中文文档 https://mybatis.org/mybatis-3/zh/getting-started.html 第一步在resources文件下创建conf.xml文件里边包括了数据库的驱动 username password url 还有mapping（映射文件） 第二步建立在resources文件下创建mapper文件 在mapper文件下创建数据库映射文件一般名字为表名+Mapping.xml比如studentMapping文件里包括返回结果还有sql语句 测试类里//加载配置文件conf.xmlInputStream inputStream = StudentDao.class.getClassLoader().getResourceAsStream(“conf.xml”); import org.apache.ibatis.io.Resources;Reader reader = Resources.getResourceAsReader(“conf.xml”);//根据配置文件创建会话工厂SqlSessionFactory sqlSessionFactory= new SqlSessionFactoryBuilder().build(inputStream);//打开会话SqlSession session = sqlSessionFactory.openSession();//查询语句第一个参数为映射文件的nameapace+identity = session.selectOne(“com.zhangguo.mybatis02.dao.studentMapper.selectStudentById”,id);//关闭会话 session.close();SELECT * from student WHERE id = #{id}SELECT * FROM WHERE name like ‘%${name}%’ #{}为占位符（这个会把传入东西的类型+东西）${}为替代符（这个只会传入东西）传入Sring name = ”zhangsan“ #{name} “zhangsan“${name} zhangsan必须写value SELECT * FROM student WHERE name like ‘%${value}%’ mysql创建外键的条件1.要创建的外键的数据表A（主表）和关联表B（从表）必须是InnoDB存储引擎 2.要创建的A表字段数据类型必须和B表对应的字段的数据类型保持一致，包括长度 3.B表对应的字段必须建立了索引或者是主键 4.A表的外键【删除时】如果设置了【set null】那么B表对应的该字段必须是【允许为空】，否则无法创建成功 基于注解实现数据库的映射创建数据库映射类在conf.xml中注册mapper实现映射类与xml不同的是需要加载映射器StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);在映射器中进行CRUD操作 嵌套查询中如果不 如果不自定义resultMap(这个返回结果的话)那么Emp里的User对象将会为null映射文件namespace 具体命名规则（https://www.cnblogs.com/zjdxr-up/p/8681382.html）namespace 对应接口的路径 动态sqlif test判断语句 有length（）函数where 当有1个以上的if语句用where sql语句不用写where 比如有两个if其中一个if不成立 它会自动去除掉该语句中的and or 等连接词if set（update语句） 当有多个条件是不用写逗号 比如有两个if其中一个if不成立 它会自动去除掉该语句中的逗号 或者两个都不成立的话set自动删除]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringMVC]]></title>
+    <url>%2Fposts%2Fae0f95e0%2F</url>
+    <content type="text"><![CDATA[https://www.yiibai.com/spring_mvc 1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:DispatcherServlet将从ViewResolver获取请求的定义视图。4:当视图完成，DispatcherServlet将模型数据传递到最终的视图，并在浏览器上呈现。这些Controller需要在 mvc-dispatcher-servlet.xml中注册 比如视图解析器 所有上述组件，即: HandlerMapping，Controller和ViewResolver是WebApplicationContext的一部分，它是普通ApplicationContext的扩展，带有Web应用程序所需的一些额外功能。&lt;context:component-scan base-package=”com.yiibai.springmvc” /&gt; //声明要扫描的包 //处理视图的类//第2行声明呈现视图的文件(比如jsp)的前缀位置//第3行说明文件的后缀&lt;bean 1 class=”org.springframework.web.servlet.view.InternalResourceViewResolver”&gt; 2 3 最后把Spring框架整合到Web应用中 mvc-dispatcher org.springframework.web.servlet.DispatcherServlet 1//指定启动顺序 1为该servlet会随着servlet容器一起启动 mvc-dispatcher 表示分发器要拦截的请求 比如 / , *.do ，/hello.jsp 拦截所以,拦截所有以do为后缀的文件,拦截hello.jsp 设置bean定义文件的位置和名称 (也就是Controller配置的位置和文件名称)/WEB-INF/mvc-dispatcher-servlet.xml 设置监听器 org.springframework.web.context.ContextLoaderListener HelloController.class @Controller@RequestMapping(“/welcome”) //说明访问的urlpublic class HelloController{ @RequestMapping(Method = RequestMethod.GET)声明请求的方法 public String printWelcome(ModelMap model){ model.addAttribute(“message”,”Hello world”); //在jsp中可以通过 ${message} 得到该值 return “hello”; //把处理结果交给hello.jsp 显示 }} hello.jsp Hello ${message} ————————————————————————————————————————————————————————————————————————————Controller的返回View和Model的函数@RequestMapping(value = “/student”, method = RequestMethod.GET) public ModelAndView student() { return new ModelAndView(“student”, “command”, new Student()); }例如这个例子返回给student.jsp form:form 需要command的这个对象 name和new Student的name是绑定在一起的如果给new Student的name赋值那么student.jsp 会显示他的值前提是student得有name这个变量student.jsp public String action11(Model model){ //向模型中添加一个名为product的对象，用于渲染视图 model.addAttribute(“product”, new Product(“Meizu note1”, 999)); return “bar/action11”; } product为Controller传来的Modelbody&gt; &lt;form:form modelAttribute=”product”&gt; 名称： &lt;form:input path=”name” /&gt; 价格： &lt;form:input path=”price” /&gt; &lt;form:input path=”name” /&gt; 相当于 SpringMvc不进入Controller的可能性之一：方法上没加@RequestMapper（）]]></content>
+      <categories>
+        <category>SpringMVC</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Maven]]></title>
     <url>%2Fposts%2F7273cdc%2F</url>
-    <content type="text"><![CDATA[官网：http://maven.apache.org/ 教程：https://www.yiibai.com/maven/ https://www.cnblogs.com/best/p/9676515.html https://www.bilibili.com/video/av31623453/ https://www.cnblogs.com/best/p/9676515.html#_label0 Maven库：http://repo2.maven.org/maven2/ 中央仓库资源： 寻找jar包经常用的http://mvnrepository.com/ https://search.maven.org/ 创建Maven项目并且部署在Tomcat上运行 https://www.jianshu.com/p/501f85bc4288 将其他的项目转成Maven项目右键点击项目名字选择Add Framework support 坐标： groupId , artifactId , version 三个元素是项目的坐标，唯一的标识这个项目。 groupId 项目所在组，一般是组织或公司 artifactId 是当前项目在组中的唯一ID； version 表示版本，SNAPSHOT表示快照，表示此项目还在开发中，不稳定。 groupId 和实际项目不一定是一一对应的，maven 有模块的概念，例如 spring-core, spring-context…；groupId 也不应该只对应公司或组织名，建议具体到项目名，因为公司或者组织下有多个项目，而artifactId只能代表模块名。 运行Maven项目需要在Run下的Edit configratuions中配置Deployment选择这个war exploded结尾的 不能添加Servlet的解决方法1：打开项目描述.iml文件，指定源代码目录：2： 模块间的依赖参考：https://www.cnblogs.com/best/p/9676515.html#_label0假如一道题的解法：整个解法是一个整体 就是父模块可能里边用到很多方面的函数 就是子模块里边用到的函数可能还用到了变量 所以函数依赖于变量 将项目转化为idea项目mvn idea:idea编译,将Java 源程序编译成 class 字节码文件mvn compile打包,动态 web工程打 war包，Java工程打 jar 包mvn pakage只打jar包：mvn jar:jar只打war包：mvn war:war]]></content>
+    <content type="text"><![CDATA[官网：http://maven.apache.org/ 教程：https://www.cnblogs.com/best/tag/Maven/ Maven库：http://repo2.maven.org/maven2/ 中央仓库资源： 寻找jar包经常用的http://mvnrepository.com/ https://search.maven.org/ 创建Maven项目并且部署在Tomcat上运行 https://www.jianshu.com/p/501f85bc4288 将其他的项目转成Maven项目右键点击项目名字选择Add Framework support 坐标： groupId , artifactId , version 三个元素是项目的坐标，唯一的标识这个项目。 groupId 项目所在组，一般是组织或公司 artifactId 是当前项目在组中的唯一ID； version 表示版本，SNAPSHOT表示快照，表示此项目还在开发中，不稳定。 groupId 和实际项目不一定是一一对应的，maven 有模块的概念，例如 spring-core, spring-context…；groupId 也不应该只对应公司或组织名，建议具体到项目名，因为公司或者组织下有多个项目，而artifactId只能代表模块名。 运行Maven项目需要在Run下的Edit configratuions中配置Deployment选择这个war exploded结尾的 不能添加Servlet的解决方法1：打开项目描述.iml文件，指定源代码目录：2： 模块间的依赖参考：https://www.cnblogs.com/best/p/9676515.html#_label0假如一道题的解法：整个解法是一个整体 就是父模块可能里边用到很多方面的函数 就是子模块里边用到的函数可能还用到了变量 所以函数依赖于变量 将项目转化为idea项目mvn idea:idea编译,将Java 源程序编译成 class 字节码文件mvn compile打包,动态 web工程打 war包，Java工程打 jar 包mvn pakage只打jar包：mvn jar:jar只打war包：mvn war:war]]></content>
       <categories>
         <category>Maven</category>
       </categories>
@@ -19,40 +85,29 @@
         <category>jdbcTemplate</category>
       </categories>
       <tags>
-        <tag>jdbcTemplate</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[springdemo]]></title>
+    <title><![CDATA[springAop]]></title>
     <url>%2Fposts%2F10e6cf28%2F</url>
-    <content type="text"><![CDATA[初学Spring的博客https://www.cnblogs.com/wmyskxz/tag/spring%E5%85%A5%E9%97%A8/ Spring的教程 http://how2j.cn/ 进阶Spring的博客https://www.cnblogs.com/best/tag/Spring/ Spring中的注解问题@Component(value = “student1”)public class Student { @Value(&quot;1&quot;) int id; @Value(&quot;student_name_1&quot;) String name; // getter and setter} @Component @Value相当于 @ComponentScan 相当于@Component声明了一个bean 但是Spring loc 不知道有这个bean 的存在 所以需要一个测试类去扫描所有类带有@Component @ComponentScanpublic class StudentConfig {} 默认情况下测试类只会扫描当前包下的@Component扫描指定包：@ComponentScan(basePackages = “pojo”)扫描指定包下的类@ComponentScan(basePackageClasses = pojo.Student.class)或者也可以在 XML 文件中声明去哪里做扫描&lt;context:component-scan base-package=”pojo” /&gt;&lt;context:component-scan base-package=”service” /&gt;@Autowired 自动装配 可以设置Value为某个类的对象@Value不能 设置对象 Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 例如包租婆和租房客和中介之间的关系 包租婆： 中介： 带租客看房 带租客看房 签合同 谈价格 谈价格 交钥匙 收房租 交钥匙 那么对于包租婆这个类来说 签合同和收房租是他的核心业务带租客看房，谈价格，交钥匙 就是切面切面 = 切入点+通知对于这个例子来说切入点就是包租婆的service方法 @Component(“landlord”)public class Landlord { public void service() { // 仅仅只是实现了核心的业务功能 System.out.println(&quot;签合同&quot;); System.out.println(&quot;收房租&quot;); }} @Component@Aspect //注册切面用于拦截包租婆的service的方法class Broker { @Before(&quot;execution(* pojo.Landlord.service())&quot;) public void before(){ System.out.println(&quot;带租客看房&quot;); System.out.println(&quot;谈价格&quot;); } @After(&quot;execution(* pojo.Landlord.service())&quot;) public void after(){ System.out.println(&quot;交钥匙&quot;); } //使用Around环绕通知 @Around(&quot;execution(* bean.Landlord.service())&quot;) public void Around(ProceedingJoinPoint joinPoint){ System.out.println(&quot;带租客看房&quot;); System.out.println(&quot;谈价格&quot;); try { joinPoint.proceed();//调用拦截的方法 就是包租婆的service方法 } catch (Throwable throwable) { throwable.printStackTrace(); } System.out.println(&quot;交钥匙&quot;); }} //在xml文件中声明扫描Component的包 &lt;context:component-scan base-package=”aspect” /&gt; &lt;context:component-scan base-package=”pojo” /&gt; aop:aspectj-autoproxy/ 测试代码 public static void main(String[] args) { ApplicationContext context = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;); Landlord landlord = (Landlord) context.getBean(&quot;landlord&quot;, Landlord.class); landlord.service(); }利用XML注册切面 aop:config &lt;aop:pointcut id=”landlordPoint” expression=”execution(* pojo.Landlord.service())”/&gt; &lt;aop:aspect id=”logAspect” ref=”broker”&gt; &lt;aop:around pointcut-ref=”landlordPoint” method=”around”/&gt; 参考博客https://www.cnblogs.com/wmyskxz/p/8835243.html]]></content>
+    <content type="text"><![CDATA[Spring的博客https://www.cnblogs.com/best/tag/Spring/ Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来 1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Proxy用一个静态代理类去实现InvocationHandler 3：利用cglib实现用一个动态代理类去实现MethodInterceptor AOP（动态代理的AOP）：前置通知实现MethodBeforeAdvice后置通知实现AfterReturningAdvice环绕童子实现MethodInterceptor//实例化Spring代理工厂ProxyFactory factory=new ProxyFactory();//设置被代理的对象factory.setTarget(new Math());//添加通知，横切逻辑factory.addAdvice(new BeforeAdvice());factory.addAdvice(new AfterAdvice());factory.addAdvice(new SurroundAdvice());//从代理工厂中获得代理对象IMath math=(IMath) factory.getProxy();使用xml配置动态代理的aop &lt;bean id=&quot;target&quot; class=&quot;com.zhangguo.Spring041.aop06.Math&quot;&gt;&lt;/bean&gt; &lt;!--通知、横切逻辑--&gt; &lt;bean id=&quot;advice&quot; class=&quot;com.zhangguo.Spring041.aop06.AfterAdvice&quot;&gt;&lt;/bean&gt; &lt;!--代理对象 --&gt; &lt;!--interceptorNames 通知数组 --&gt; &lt;!--p:target-ref 被代理的对象--&gt; &lt;!--p:proxyTargetClass 被代理对象是否为一个类，如果是则使用cglib,否则使用jdk动态代理 --&gt; &lt;bean id=&quot;proxy&quot; class=&quot;org.springframework.aop.framework.ProxyFactoryBean&quot; p:interceptorNames=&quot;advice&quot; p:target-ref=&quot;target&quot; p:proxyTargetClass=&quot;true&quot;&gt;&lt;/bean&gt;aop表达式类型execution//com.zhangguo.Spring052.aop03包下所有类的所有方法被切入 @After(“execution(* com.zhangguo.Spring052.aop03..(..))”)within //com.zhangguo.Spring052.aop03包下所有类的所有方法被切入 @After(“within(com.zhangguo.Spring052.aop03.*)”)this //实现了IMath接口的代理对象的任意连接点 @After(“this(com.zhangguo.Spring052.aop03.IMath)”)target args //要求方法有两个int类型的参考才会被织入横切逻辑 @After(“args(int,int)”)bean 注解配置AOP在通知类上加@Component@Aspect声明这个类是切面在方法上@Befor After…在XML中配置&lt;aop:aspectj-autoproxy proxy-target-class=”true”&gt;proxy-target-class proxy-target-class=”true”属性表示被代理的目标对象是一个类，而非实现了接口的类，主要是为了选择不同的代理方式。]]></content>
       <categories>
         <category>spring</category>
       </categories>
       <tags>
-        <tag>spring</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Upload Blog]]></title>
     <url>%2Fposts%2F19bd81cd%2F</url>
-    <content type="text"><![CDATA[上传博客hexo new “新的文章”hexo g 生成新的静态文件hexo d 发布到GitHub]]></content>
+    <content type="text"><![CDATA[上传博客hexo new “新的文章”hexo g 生成新的静态文件hexo d 发布到GitHub IDEA上传博客https://blog.csdn.net/woyizhizaizhaoni/article/details/90436721 IDEA更新博客https://www.cnblogs.com/igoodful/p/10522026.html]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[summerplan]]></title>
-    <url>%2Fposts%2Fc27ae11f%2F</url>
-    <content type="text"><![CDATA[暑假计划: 1:学习SSM框架 2:写一个demo(SSM) Fighting!]]></content>
-      <categories>
-        <category>plan</category>
-      </categories>
-      <tags>
-        <tag>SummerPlan</tag>
+        <tag>Bolg</tag>
       </tags>
   </entry>
 </search>

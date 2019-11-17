@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Wanfeng">
 <meta property="og:description" content="jsp跳转到Controller 路径丢失项目名http://localhost:8080/SsmDemo_war_exploded/index.jsphttp://localhost:8080/SsmDemo_war_exploded/Controller 丢失SsmDemo_war_exploded 解决办法https://blog.csdn.net/qq_17213067/article/d">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T12:32:53.646Z">
+<meta property="og:updated_time" content="2019-11-17T12:36:56.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSM示例">
 <meta name="twitter:description" content="jsp跳转到Controller 路径丢失项目名http://localhost:8080/SsmDemo_war_exploded/index.jsphttp://localhost:8080/SsmDemo_war_exploded/Controller 丢失SsmDemo_war_exploded 解决办法https://blog.csdn.net/qq_17213067/article/d">
@@ -411,8 +411,8 @@
 <p><a href="http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=#{stu.id}" target="_blank" rel="noopener">http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=#{stu.id}</a><br><a href="http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=${stu.id}" target="_blank" rel="noopener">http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=${stu.id}</a></p>
 <p>JSP Controller互相传值问题<br><a href="https://www.cnblogs.com/friends-wf/p/3801120.html" target="_blank" rel="noopener">https://www.cnblogs.com/friends-wf/p/3801120.html</a></p>
 <p>从Controller传值到Jsp 参数获取不到<br>加这个标签&lt;%@ page isELIgnored=”false” %&gt;</p>
-<a id="more"></a> 
-<hr>
+<a id="more"></a>
+
 <p>SSM整合Demo<br>cnblogs.com/charlypage/p/9163857.html<br>1
 Java类:<br>     包:<br>        Controller(处理用户的提交申请然后请求Model返回Modelandview  然后处理驶入)<br>        mapper(数据库映射类)<br>        pojo (javabean)<br>        service(包含两个东西service接口(数据库访问封装方法)<br>        service接口实现类(实现service接口的方法 在这些方法中再去调用mapper包下的class的方法)<br>配置文件:<br>     Spring配置文件(applicationContext.xml)<br>     SpringMVC配置文件(applicationContext-mvc.xml)<br>     Mybatis配置文件（mybatis-config.xml）(可以省略 省略的内容在Spring配置文件中配置)<br>     mapper配置文件(Javabean类的名字+mapper.xml)mybatis数据库映射配置文件  namespace:映射类的具体路径(XXXMapper))<br>     web.xml配置文件<br>     Maven引入jar包(pom.xml)<br>     db.properties<br>上边3个都在resources文件下配置 最后一个在resources下创建文件夹mapper下配置<br>视图文件:</p>
 <pre><code>view(WEB-INF下创建的文件夹)存放视图文件</code></pre><hr>

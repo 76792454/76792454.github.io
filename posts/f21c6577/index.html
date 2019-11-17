@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Wanfeng">
 <meta property="og:description" content="jsp跳转到Controller 路径丢失项目名http://localhost:8080/SsmDemo_war_exploded/index.jsphttp://localhost:8080/SsmDemo_war_exploded/Controller 丢失SsmDemo_war_exploded 解决办法https://blog.csdn.net/qq_17213067/article/d">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T12:25:31.210Z">
+<meta property="og:updated_time" content="2019-11-17T12:29:31.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSM示例">
 <meta name="twitter:description" content="jsp跳转到Controller 路径丢失项目名http://localhost:8080/SsmDemo_war_exploded/index.jsphttp://localhost:8080/SsmDemo_war_exploded/Controller 丢失SsmDemo_war_exploded 解决办法https://blog.csdn.net/qq_17213067/article/d">
@@ -369,7 +369,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  505
+				  508
 				</span>
               
 
@@ -410,8 +410,8 @@
 <p>丢失SsmDemo_war_exploded 解决办法<br><a href="https://blog.csdn.net/qq_17213067/article/details/74452169" target="_blank" rel="noopener">https://blog.csdn.net/qq_17213067/article/details/74452169</a><br> <a href="${pageContext.request.contextPath}/person/toupdate.action?id=${p.id}">修改</a><br>路径：<br> ${pageContext.request.contextPath}/Controller</p>
 <p><a href="http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=#{stu.id}" target="_blank" rel="noopener">http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=#{stu.id}</a><br><a href="http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=${stu.id}" target="_blank" rel="noopener">http://localhost:8080/SsmDemo_war_exploded/stu/goToUpdate?id=${stu.id}</a></p>
 <p>JSP Controller互相传值问题<br><a href="https://www.cnblogs.com/friends-wf/p/3801120.html" target="_blank" rel="noopener">https://www.cnblogs.com/friends-wf/p/3801120.html</a></p>
-<p>从Controller传值到Jsp 参数获取不到</p>
-<h2 id="加这个标签-lt-page-isELIgnored-”false”-gt"><a href="#加这个标签-lt-page-isELIgnored-”false”-gt" class="headerlink" title="加这个标签&lt;%@ page isELIgnored=”false” %&gt;"></a>加这个标签&lt;%@ page isELIgnored=”false” %&gt;</h2><p>SSM整合Demo<br>cnblogs.com/charlypage/p/9163857.html<br>1
+<p>从Controller传值到Jsp 参数获取不到<br>加这个标签&lt;%@ page isELIgnored=”false” %&gt;</p>
+<h2 id="lt-–more–-gt"><a href="#lt-–more–-gt" class="headerlink" title="&lt; !–more–&gt; "></a>&lt; !–more–&gt; </h2><p>SSM整合Demo<br>cnblogs.com/charlypage/p/9163857.html<br>1
 Java类:<br>     包:<br>        Controller(处理用户的提交申请然后请求Model返回Modelandview  然后处理驶入)<br>        mapper(数据库映射类)<br>        pojo (javabean)<br>        service(包含两个东西service接口(数据库访问封装方法)<br>        service接口实现类(实现service接口的方法 在这些方法中再去调用mapper包下的class的方法)<br>配置文件:<br>     Spring配置文件(applicationContext.xml)<br>     SpringMVC配置文件(applicationContext-mvc.xml)<br>     Mybatis配置文件（mybatis-config.xml）(可以省略 省略的内容在Spring配置文件中配置)<br>     mapper配置文件(Javabean类的名字+mapper.xml)mybatis数据库映射配置文件  namespace:映射类的具体路径(XXXMapper))<br>     web.xml配置文件<br>     Maven引入jar包(pom.xml)<br>     db.properties<br>上边3个都在resources文件下配置 最后一个在resources下创建文件夹mapper下配置<br>视图文件:</p>
 <pre><code>view(WEB-INF下创建的文件夹)存放视图文件</code></pre><hr>
 <p>application.xml<br>    读取db.properties<br>    注解开发<br>    扫描注解包<br>    数据源(datasource)<br>    创建sqlSessionFactory ==&gt; mybatis核心配置文件的读取<br>    扫描mybatis的mapper接口路径</p>
@@ -607,7 +607,7 @@ Java类:<br>     包:<br>        Controller(处理用户的提交申请然后请
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#加这个标签-lt-page-isELIgnored-”false”-gt"><span class="nav-number">1.</span> <span class="nav-text">加这个标签&lt;%@ page isELIgnored=”false” %&gt;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-–more–-gt"><span class="nav-number">1.</span> <span class="nav-text">&lt; !–more–&gt; </span></a></li></ol></div>
             
 
           </div>

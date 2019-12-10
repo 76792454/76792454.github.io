@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Wanfeng">
 <meta property="og:description" content="java中的链表堆栈队列 堆栈就是链表的头插和头删队列java中提供了工具类可以供使用 Queue queue = new LinkedList(); https://www.runoob.com/java/data-queue.html同步问题https://blog.csdn.net/qq_42914528/article/details/83819292 二叉搜索树的基本操作https://">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T08:18:18.688Z">
+<meta property="og:updated_time" content="2019-12-10T17:42:36.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Data structure">
 <meta name="twitter:description" content="java中的链表堆栈队列 堆栈就是链表的头插和头删队列java中提供了工具类可以供使用 Queue queue = new LinkedList(); https://www.runoob.com/java/data-queue.html同步问题https://blog.csdn.net/qq_42914528/article/details/83819292 二叉搜索树的基本操作https://">
@@ -369,7 +369,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  358
+				  1.2k
 				</span>
               
 
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  5
                 </span>
               
             </div>
@@ -419,7 +419,40 @@
 BFS伪码<br>void BFS(Vertex V){<br>    Visited[V] = true;<br>    enqueue(V,Q);<br>    while(!Q.isEmpry()){<br>        V = dequeue(Q);<br>        for(V的每个邻接点W){<br>            if(!Visited[W]){<br>                Visited[W] = true;<br>                enqueue(W);<br>            }<br>        }<br>    }<br>}</p>
 <p>如果图不连通<br>void ListComponents(Graph g){<br>for(each V in G){<br>    if(!Visited[V]){<br>        DFS(V);或者BFS(V);<br>    }<br>}
 }</p>
-<p>最短路径</p>
+<p>最短路径<br>无权图单源最短路径(和BFS算法类似)<br>void unWeight(Vertex S){<br>    Enqueue(S,Q);<br>    while(!isEmpty(Q)){<br>        V = Dequeue(Q);<br>        for(V的每个邻接点W){<br>            if(dist[W]== -1){//表示这个节点没有被访问过<br>                dist[W] = dist[V]+1;<br>                path[W] = V;<br>                Enqueue(W,Q);<br>            }<br>        }<br>    }<br>}</p>
+<p>有权图单源最短路径<br>Dijkstra算法<br>令S{S源点,已经确定了最短路径的顶点V}<br>新增加的V（只经过S中的节点 如果存在一个W节点 S到V的距离小于S到W到V的距离 这是不成立的因为我们每次找的是dist[]最小的显然S到W的距离小于S到V的距离）<br>只能影响他的邻接点的dist[]值<br>直接使用这个算法稠密图 将dist[]存到最小堆中是个稀疏图<br>dist[]定义为无穷大<br>void Dijkstra(Vertex V){<br>    while(1){<br>        V = 未收录顶点中dist最小者;<br>        if(这样的V不存在)break;</p>
+<pre><code>    collected[V] = true;
+    for(V的每个邻接点W){
+        if(collected[W]==false){
+            if(dist[V]+V到M的权重&lt;dist[W]){
+                dist[W] = dist[V]+V到M的权重
+                path[W] = V;
+            }
+        }
+    }
+}</code></pre><p>}
+多源最短路径<br>Floyd算法 适合稠密图<br>dist[]定义为无穷大<br>void Floyd(){<br>    //N为顶点个数<br>    for(int i = 0;i&lt;N;i++){<br>        for(int j = 0;j&lt;N;j++){<br>            D[i][j] = Graph[i][j];<br>            path[i][j] = -1;<br>        }<br>    }<br>    for(int k = 0;k&lt;N;k++){<br>        for(int i = 0;i&lt;N;i++){<br>            for(int j = 0;j&lt;N;j++){<br>                if(D[i][k]+D[k][j]&lt;D[i][j]){<br>                    D[i][j] = D[i][k]+D[k][j];<br>                    path[i][j] = k;<br>                }<br>            }<br>        }<br>    }</p>
+<p>}</p>
+<p>最小生成树问题<br>Prim算法(和Dijkstra算法差不多)<br>每次找到与当前最小生成树中节点权值最小的节点把他收入到最小生成树中<br>void Prim(){<br>    MST = {s}; s为顶点<br>    while(1){<br>        V = 未收录顶点中dist最小者;<br>        if(这样的V不存在)break;</p>
+<pre><code>    将V收入到MST中dist[V]=0;
+    for(V的每个邻接点W){
+        if(dist[W]!=0){
+            if(V到W的权重小于dist[W]){
+                dist[W] = V到W的权重;
+                parent[W] = V;
+            }
+        }
+    }
+}
+if(MST中收录的顶点个数小于图中的顶点){
+    说明图不连通
+    没有生成树
+}</code></pre><p>}
+Kruskal算法<br>每次收录图中最小的边前提是判断当前收录的边是否构成回路<br>void Kruskal(){<br>    MST = {};<br>    while(MST中不到顶点个数-1条边&amp;&amp;E中还有边){<br>        从E中去权重最小的边E(V,W);<br>        将E(V,W)从E中删除<br>        if(E(V,W)不在MST中构成回路){<br>            将E(V,W)插入到MST中<br>        }else{<br>            什么也不做<br>        }<br>    }<br>    if(MST中收录的顶点个数小于图中的顶点){<br>        说明图不连通<br>        没有生成树<br>    }<br>}</p>
+<p>散列表<br>散列表取长度应该取装填因子a等于0.7或者0.8<br>a = 表中使用的空间个数/表中空间总个数</p>
+<p>解决hash冲突</p>
+<p>开放地址法（线性探测，平方探测（正负q的平方 q&lt;=tableSize/2）双散列）<br>双散列为:d = i*h2(key) 对于任意的key h2(key)不等于0<br>例子：h2(key) = p-(key mod p);<br>p-(key mod p)是一个散列函数 (key mod p)也是一个散列函数</p>
+<p>分离链式法<br>把冲突的数据有链表链在当前节点上<br>比如2这个节点放了2又放了3 那么2这个节点存储的是一个链表 链表中的节点分别为2和3</p>
 
       
     </div>

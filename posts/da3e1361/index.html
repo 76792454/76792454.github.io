@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="教程 https://www.cnblogs.com/best/tag/Mybatis/官方中文文档 https://mybatis.org/mybatis-3/zh/getting-started.html  第一步在resources文件下创建conf.xml文件里边包括了数据库的驱动 username password url 还有mapping（映射文件） 第二步建立在resources文">
+<meta name="description" content="第一步在resources文件下创建conf.xml文件里边包括了数据库的驱动 username password url 还有mapping（映射文件） 第二步建立在resources文件下创建mapper文件 在mapper文件下创建数据库映射文件一般名字为表名+Mapping.xml比如studentMapping文件里包括返回结果还有sql语句 测试类里//加载配置文件conf.xmlIn">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mybatis">
 <meta property="og:url" content="http://yoursite.com/posts/da3e1361/index.html">
 <meta property="og:site_name" content="Wanfeng">
-<meta property="og:description" content="教程 https://www.cnblogs.com/best/tag/Mybatis/官方中文文档 https://mybatis.org/mybatis-3/zh/getting-started.html  第一步在resources文件下创建conf.xml文件里边包括了数据库的驱动 username password url 还有mapping（映射文件） 第二步建立在resources文">
+<meta property="og:description" content="第一步在resources文件下创建conf.xml文件里边包括了数据库的驱动 username password url 还有mapping（映射文件） 第二步建立在resources文件下创建mapper文件 在mapper文件下创建数据库映射文件一般名字为表名+Mapping.xml比如studentMapping文件里包括返回结果还有sql语句 测试类里//加载配置文件conf.xmlIn">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-08T15:05:18.716Z">
+<meta property="og:updated_time" content="2019-11-17T13:12:54.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis">
-<meta name="twitter:description" content="教程 https://www.cnblogs.com/best/tag/Mybatis/官方中文文档 https://mybatis.org/mybatis-3/zh/getting-started.html  第一步在resources文件下创建conf.xml文件里边包括了数据库的驱动 username password url 还有mapping（映射文件） 第二步建立在resources文">
+<meta name="twitter:description" content="第一步在resources文件下创建conf.xml文件里边包括了数据库的驱动 username password url 还有mapping（映射文件） 第二步建立在resources文件下创建mapper文件 在mapper文件下创建数据库映射文件一般名字为表名+Mapping.xml比如studentMapping文件里包括返回结果还有sql语句 测试类里//加载配置文件conf.xmlIn">
 
 
 
@@ -369,7 +369,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  628
+				  604
 				</span>
               
 
@@ -406,9 +406,7 @@
       
 
       
-        <p>教程 <a href="https://www.cnblogs.com/best/tag/Mybatis/" target="_blank" rel="noopener">https://www.cnblogs.com/best/tag/Mybatis/</a><br>官方中文文档 <a href="https://mybatis.org/mybatis-3/zh/getting-started.html" target="_blank" rel="noopener">https://mybatis.org/mybatis-3/zh/getting-started.html</a></p>
-<hr>
-<p>第一步在resources文件下创建conf.xml文件<br>里边包括了数据库的驱动 username password url 还有mapping（映射文件）</p>
+        <p>第一步在resources文件下创建conf.xml文件<br>里边包括了数据库的驱动 username password url 还有mapping（映射文件）</p>
 <p>第二步建立在resources文件下创建mapper文件 在mapper文件下创建数据库映射文件<br>一般名字为表名+Mapping.xml比如studentMapping<br>文件里包括返回结果还有sql语句</p>
 <p>测试类里<br>//加载配置文件conf.xml<br>InputStream inputStream = StudentDao.class.getClassLoader().getResourceAsStream(“conf.xml”);</p>
 <p>import org.apache.ibatis.io.Resources;<br>Reader reader = Resources.getResourceAsReader(“conf.xml”);<br>//根据配置文件创建会话工厂<br>SqlSessionFactory sqlSessionFactory= new SqlSessionFactoryBuilder().build(inputStream);<br>//打开会话<br>SqlSession session = sqlSessionFactory.openSession();<br>//查询语句第一个参数为映射文件的nameapace+id<br>entity = session.selectOne(“com.zhangguo.mybatis02.dao.studentMapper.selectStudentById”,id);<br>//关闭会话</p>
@@ -558,7 +556,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -569,7 +567,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -580,7 +578,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

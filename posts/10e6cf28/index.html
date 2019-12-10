@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Spring的博客https://www.cnblogs.com/best/tag/Spring/ Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来 1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Prox">
+<meta name="description" content="代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Proxy用一个静态代理类去实现InvocationHandler  3：利用cglib实现用一个动态代理类去实现MethodInterceptor  AOP（动态代理的AOP）：前置通知实现MethodBeforeAd">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springAop">
 <meta property="og:url" content="http://yoursite.com/posts/10e6cf28/index.html">
 <meta property="og:site_name" content="Wanfeng">
-<meta property="og:description" content="Spring的博客https://www.cnblogs.com/best/tag/Spring/ Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来 1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Prox">
+<meta property="og:description" content="代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Proxy用一个静态代理类去实现InvocationHandler  3：利用cglib实现用一个动态代理类去实现MethodInterceptor  AOP（动态代理的AOP）：前置通知实现MethodBeforeAd">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-07T08:29:44.431Z">
+<meta property="og:updated_time" content="2019-11-17T13:13:15.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springAop">
-<meta name="twitter:description" content="Spring的博客https://www.cnblogs.com/best/tag/Spring/ Aop简单的使用https://www.cnblogs.com/wmyskxz/p/8835243.html 代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来 1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Prox">
+<meta name="twitter:description" content="代理模式：主要是把业务逻辑与一些与业务不相关的代码分离出来1：静态代理利用接口的形式(业务逻辑)将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中 2：利用JDK内置的Proxy用一个静态代理类去实现InvocationHandler  3：利用cglib实现用一个动态代理类去实现MethodInterceptor  AOP（动态代理的AOP）：前置通知实现MethodBeforeAd">
 
 
 
@@ -369,7 +369,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  553
+				  530
 				</span>
               
 
@@ -406,10 +406,7 @@
       
 
       
-        <p>Spring的博客<br><a href="https://www.cnblogs.com/best/tag/Spring/" target="_blank" rel="noopener">https://www.cnblogs.com/best/tag/Spring/</a></p>
-<p>Aop简单的使用<br><a href="https://www.cnblogs.com/wmyskxz/p/8835243.html" target="_blank" rel="noopener">https://www.cnblogs.com/wmyskxz/p/8835243.html</a></p>
-<p>代理模式：<br>主要是把业务逻辑与一些与业务不相关的代码分离出来</p>
-<p>1：静态代理<br>利用接口的形式(业务逻辑)<br>将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中</p>
+        <p>代理模式：<br>主要是把业务逻辑与一些与业务不相关的代码分离出来<br>1：静态代理<br>利用接口的形式(业务逻辑)<br>将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中</p>
 <p>2：利用JDK内置的Proxy<br>用一个静态代理类去实现InvocationHandler </p>
 <p>3：利用cglib实现<br>用一个动态代理类去实现MethodInterceptor </p>
 <p>AOP（动态代理的AOP）：<br>前置通知实现MethodBeforeAdvice<br>后置通知实现AfterReturningAdvice<br>环绕童子实现MethodInterceptor<br>//实例化Spring代理工厂<br>ProxyFactory factory=new ProxyFactory();<br>//设置被代理的对象<br>factory.setTarget(new Math());<br>//添加通知，横切逻辑<br>factory.addAdvice(new BeforeAdvice());<br>factory.addAdvice(new AfterAdvice());<br>factory.addAdvice(new SurroundAdvice());<br>//从代理工厂中获得代理对象<br>IMath math=(IMath) factory.getProxy();<br>使用xml配置动态代理的aop</p>
@@ -457,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/19bd81cd/" rel="next" title="Upload Blog">
-                <i class="fa fa-chevron-left"></i> Upload Blog
+              <a href="/posts/19bd81cd/" rel="next" title="博客操作">
+                <i class="fa fa-chevron-left"></i> 博客操作
               </a>
             
           </div>
@@ -467,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/e2756c2c/" rel="prev" title="jdbcTemplate">
-                jdbcTemplate <i class="fa fa-chevron-right"></i>
+              <a href="/posts/7273cdc/" rel="prev" title="Maven">
+                Maven <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +536,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -550,7 +547,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -561,7 +558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

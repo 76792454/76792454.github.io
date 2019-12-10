@@ -287,6 +287,424 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/18d6d006/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晚风">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wanfeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/18d6d006/" itemprop="url">springLoc</a></h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-04T14:57:03+08:00">
+                2019-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring/" itemprop="url" rel="index">
+                    <span itemprop="name">spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+					 
+				<span class="post-meta-item-icon">
+				  <i class="fa fa-file-word-o"></i>
+				</span>
+				
+				  <span class="post-meta-item-text">Words count in article&#58;</span>
+				
+				<span title="Words count in article">
+				  529
+				</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用注解配置Bean<br>在POJO的上边配置@Component<br>在Spring配置文件中在那个包下扫描带有注解的bean<br>&lt;context:component-scan base-package=””/&gt;<br>具体的在某个包下排除某个类看博客</p>
+<p>自动装配@Autowired在容器中的bean中根据类型自动注入值<br>也可也和@Qualifier(“XXX”)配合使用 XXX代表bean的名字<br>@Resource装配顺序<br>　　 如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常<br>　　 如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常<br>　　 如果指定了type，则从上下文中找到类型匹配的唯一bean进行装配，找不到或者找到多个，都会抛出异常<br>　　 如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配；</p>
+<p>纯注解配置loc</p>
+<p>1：定义数据库访问接口<br>/**</p>
+<ul>
+<li><p>图书数据访问接口</p>
+</li>
+<li><p>/
+public interface IBookDAO {<br>  /**</p>
+<ul>
+<li>添加图书</li>
+<li>/
+public String addBook(String bookname);<br>}
+2：实现数据库接口<br>/**</li>
+</ul>
+</li>
+<li><p>图书数据访问实现类</p>
+</li>
+<li><p>/
+@Repository<br>public class BookDAO implements IBookDAO {</p>
+<p>  public String addBook(String bookname) {</p>
+<pre><code>return &quot;添加图书&quot;+bookname+&quot;成功！&quot;;</code></pre><p>  }<br>}
+3：service类<br>/**</p>
+</li>
+<li><p>图书业务类</p>
+</li>
+<li><p>/
+@Service<br>public class BookService {<br>  @Resource<br>  IBookDAO bookDAO;</p>
+<p>  public void storeBook(String bookname){</p>
+<pre><code>System.out.println(&quot;图书上货&quot;);
+String result=bookDAO.addBook(bookname);
+System.out.println(result);</code></pre><p>  }<br>}
+4：定义一个替代xml的ApplicationCfg容器类<br>/**</p>
+</li>
+<li><p>容器的配置类</p>
+</li>
+<li><p>/
+@Configuration<br>@ComponentScan(basePackages=”com.zhangguo.Spring051.ioc06”)<br>public class ApplicationCfg {<br>  @Bean<br>  public User getUser(){</p>
+<pre><code>return new User(&quot;成功&quot;);</code></pre><p>  }<br>}
+@Configuration相当于配置文件中的<beans>，ComponentScan相当于配置文件中的context:component-scan，属性也一样设置</beans></p>
+</li>
+</ul>
+<p>,@Bean相当于<bean>，只能注解在方法和注解上，一般在方法上使用，源码中描述：@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})，方法名相当于id。中间使用到了User，User类的代码如下：<br>5：数据访问<br>     ApplicationContext ctx=new AnnotationConfigApplicationContext(ApplicationCfg.class);<br>     BookService bookservice=ctx.getBean(BookService.class);<br>     bookservice.storeBook(“《Spring MVC权威指南 第四版》”);<br>具体的参考博客     </bean></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/da3e1361/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晚风">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wanfeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/da3e1361/" itemprop="url">Mybatis</a></h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-15T14:59:49+08:00">
+                2019-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">Mybatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+					 
+				<span class="post-meta-item-icon">
+				  <i class="fa fa-file-word-o"></i>
+				</span>
+				
+				  <span class="post-meta-item-text">Words count in article&#58;</span>
+				
+				<span title="Words count in article">
+				  604
+				</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>第一步在resources文件下创建conf.xml文件<br>里边包括了数据库的驱动 username password url 还有mapping（映射文件）</p>
+<p>第二步建立在resources文件下创建mapper文件 在mapper文件下创建数据库映射文件<br>一般名字为表名+Mapping.xml比如studentMapping<br>文件里包括返回结果还有sql语句</p>
+<p>测试类里<br>//加载配置文件conf.xml<br>InputStream inputStream = StudentDao.class.getClassLoader().getResourceAsStream(“conf.xml”);</p>
+<p>import org.apache.ibatis.io.Resources;<br>Reader reader = Resources.getResourceAsReader(“conf.xml”);<br>//根据配置文件创建会话工厂<br>SqlSessionFactory sqlSessionFactory= new SqlSessionFactoryBuilder().build(inputStream);<br>//打开会话<br>SqlSession session = sqlSessionFactory.openSession();<br>//查询语句第一个参数为映射文件的nameapace+id<br>entity = session.selectOne(“com.zhangguo.mybatis02.dao.studentMapper.selectStudentById”,id);<br>//关闭会话</p>
+<h2 id="session-close"><a href="#session-close" class="headerlink" title="session.close();"></a>session.close();</h2><p>SELECT * from student WHERE id = #{id}<br>SELECT * FROM WHERE name like ‘%${name}%’</p>
+<p>#{}为占位符（这个会把传入东西的类型+东西）<br>${}为替代符（这个只会传入东西）<br>传入Sring name = ”zhangsan“</p>
+<p>#{name} “zhangsan“<br>${name}  zhangsan<br>必须写value<br><select id="selectStudentByName" parametertype="String" resulttype="com.zhangguo.mybatis02.entities.Student"><br>        SELECT * FROM student WHERE name like ‘%${value}%’<br></select></p>
+<p>mysql创建外键的条件<br>1.要创建的外键的数据表A（主表）和关联表B（从表）必须是InnoDB存储引擎</p>
+<p>2.要创建的A表字段数据类型必须和B表对应的字段的数据类型保持一致，包括长度</p>
+<p>3.B表对应的字段必须建立了索引或者是主键</p>
+<p>4.A表的外键【删除时】如果设置了【set null】那么B表对应的该字段必须是【允许为空】，否则无法创建成功</p>
+<p>基于注解实现数据库的映射<br>创建数据库映射类<br>在conf.xml中注册mapper<br>实现映射类<br>与xml不同的是需要加载映射器<br>StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);<br>在映射器中进行CRUD操作</p>
+<p>嵌套查询中如果不</p>
+<!--员工关联查询结果映射-->
+ <resultmap id="empMap_1" type="Emp">
+ <id property="id" column="id"></id>
+ <result property="user_id" column="user_id"></result>
+ <result property="realname" column="realname"></result>
+ <result property="email" column="email"></result>
+ <!--映射关系，指定属性与属性的类型-->
+ <association property="user" javatype="User">
+ <id property="id" column="user_id"></id>
+ <result property="username" column="username"></result>
+ <result property="password" column="password"></result>
+ </association>
+ </resultmap>
+
+<p>如果不自定义resultMap(这个返回结果的话)<br>那么Emp里的User对象将会为null<br>映射文件namespace 具体命名规则（<a href="https://www.cnblogs.com/zjdxr-up/p/8681382.html）" target="_blank" rel="noopener">https://www.cnblogs.com/zjdxr-up/p/8681382.html）</a><br>namespace 对应接口的路径</p>
+<p>动态sql<br>if test判断语句 有length（）函数<br>where 当有1个以上的if语句用where sql语句不用写where<br>      比如有两个if其中一个if不成立 它会自动去除掉该语句中的and or 等连接词<br>if set（update语句）<br>    当有多个条件是不用写逗号<br>    比如有两个if其中一个if不成立 它会自动去除掉该语句中的逗号 或者两个都不成立的话set自动删除</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/ae0f95e0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -373,7 +791,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  614
+				  609
 				</span>
               
 
@@ -412,8 +830,7 @@
       
         
           
-            <p><a href="https://www.yiibai.com/spring_mvc" target="_blank" rel="noopener">https://www.yiibai.com/spring_mvc</a></p>
-<p>1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：<br>在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller<br>2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定<br>义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet<br>3:DispatcherServlet将从ViewResolver获取请求的定义视图。<br>4:当视图完成，DispatcherServlet将模型数据传递到最终的视图，并在浏览器上呈现。<br>这些Controller需要在 mvc-dispatcher-servlet.xml中注册 比如视图解析器</p>
+            <p>1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：<br>在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller<br>2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定<br>义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet<br>3:DispatcherServlet将从ViewResolver获取请求的定义视图。<br>4:当视图完成，DispatcherServlet将模型数据传递到最终的视图，并在浏览器上呈现。<br>这些Controller需要在 mvc-dispatcher-servlet.xml中注册 比如视图解析器</p>
 <p>所有上述组件，即: HandlerMapping，Controller和ViewResolver是WebApplicationContext的一部分，它是普通ApplicationContext的扩展，带有Web应用程序所需的一些额外功能。<br>&lt;context:component-scan base-package=”com.yiibai.springmvc” /&gt; //声明要扫描的包</p>
 <p>//处理视图的类<br>//第2行声明呈现视图的文件(比如jsp)的前缀位置<br>//第3行说明文件的后缀<br>&lt;bean<br>    1  class=”org.springframework.web.servlet.view.InternalResourceViewResolver”&gt;<br>    2   <property name="prefix" value="/WEB-INF/jsp/"><br>    3   <property name="suffix" value=".jsp"><br></property></property></p>
 <p>最后把Spring框架整合到Web应用中</p>
@@ -580,7 +997,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  420
+				  351
 				</span>
               
 
@@ -619,13 +1036,7 @@
       
         
           
-            <p>官网：<a href="http://maven.apache.org/" target="_blank" rel="noopener">http://maven.apache.org/</a></p>
-<p>教程：<a href="https://www.cnblogs.com/best/tag/Maven/" target="_blank" rel="noopener">https://www.cnblogs.com/best/tag/Maven/</a></p>
-<p>Maven库：<a href="http://repo2.maven.org/maven2/" target="_blank" rel="noopener">http://repo2.maven.org/maven2/</a> </p>
-<p>中央仓库资源：</p>
-<p>寻找jar包经常用的<br><a href="http://mvnrepository.com/" target="_blank" rel="noopener">http://mvnrepository.com/</a></p>
-<p><a href="https://search.maven.org/" target="_blank" rel="noopener">https://search.maven.org/</a></p>
-<p>创建Maven项目并且部署在Tomcat上运行</p>
+            <p>创建Maven项目并且部署在Tomcat上运行</p>
 <p><a href="https://www.jianshu.com/p/501f85bc4288" target="_blank" rel="noopener">https://www.jianshu.com/p/501f85bc4288</a></p>
 <p>将其他的项目转成Maven项目<br>右键点击项目名字选择Add Framework support</p>
 <p>坐标：</p>
@@ -635,336 +1046,9 @@
 <p>version 表示版本，SNAPSHOT表示快照，表示此项目还在开发中，不稳定。</p>
 <p>groupId 和实际项目不一定是一一对应的，maven 有模块的概念，例如 spring-core, spring-context…；groupId 也不应该只对应公<br>司或组织名，建议具体到项目名，因为公司或者组织下有多个项目，而artifactId只能代表模块名。</p>
 <p>运行Maven项目需要在Run下的Edit configratuions中配置Deployment选择这个war exploded结尾的</p>
-<p>不能添加Servlet的解决方法<br>1：打开项目描述.iml文件，指定源代码目录：<br>2：<sourceroots><br>     <root url="file://$MODULE_DIR$/src/main/java"><br>   </root></sourceroots></p>
 <p>模块间的依赖参考：<a href="https://www.cnblogs.com/best/p/9676515.html#_label0" target="_blank" rel="noopener">https://www.cnblogs.com/best/p/9676515.html#_label0</a><br>假如一道题的解法：<br>整个解法是一个整体 就是父模块<br>可能里边用到很多方面的函数 就是子模块<br>里边用到的函数可能还用到了变量 所以函数依赖于变量</p>
 <p>将项目转化为idea项目<br>mvn idea:idea<br>编译,将Java 源程序编译成 class 字节码文件<br>mvn compile<br>打包,动态 web工程打 war包，Java工程打 jar 包<br>mvn pakage<br>只打jar包：mvn jar:jar<br>只打war包：mvn war:war</p>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/e2756c2c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="晚风">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wanfeng">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/e2756c2c/" itemprop="url">jdbcTemplate</a></h1>
-        
-
-        <div class="post-meta">
-			
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-29T10:41:42+08:00">
-                2019-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/jdbcTemplate/" itemprop="url" rel="index">
-                    <span itemprop="name">jdbcTemplate</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-					 
-				<span class="post-meta-item-icon">
-				  <i class="fa fa-file-word-o"></i>
-				</span>
-				
-				  <span class="post-meta-item-text">Words count in article&#58;</span>
-				
-				<span title="Words count in article">
-				  763
-				</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  jdbcurl:jdbc:mysql://localhost:3306/student?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false</p>
-<pre><code>driverClassName:com.mysql.cj.jdbc.Driver
-SPRING中的JDBC利用JDBCTEMPLATE
-配置xml文件的DataSource
-
-&lt;bean id=&quot;dataSource&quot;  name=&quot;dataSource&quot; class = &quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
-    &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
-    &lt;property name=&quot;password&quot; value=&quot;76792454&quot;/&gt;
-    &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;/&gt;
-    &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/student?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;serverTimezone=GMT%2B8&amp;amp;useSSL=false&quot;/&gt;
-&lt;/bean&gt;
-
-配置JDBCTemplate
-   &lt;bean id = &quot;jdbcTemplate&quot; class = &quot;org.springframework.jdbc.core.JdbcTemplate&quot;&gt;
-  &lt;!-- &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt; --&gt;
-    &lt;constructor-arg&gt;&lt;ref bean=&quot;dataSource&quot;&gt;&lt;/ref&gt; &lt;/constructor-arg&gt;
-&lt;/bean&gt;
-
-主函数
-    ApplicationContext acx = new ClassPathXmlApplicationContext(&quot;spring-config.xml&quot;);
-    String sql = &quot;SELECT * FROM student&quot;;
-    JdbcTemplate jdbcTemplate = (JdbcTemplate) acx.getBean(&quot;jdbcTemplate&quot;);
-    List list = jdbcTemplate.queryForList(sql);
-    for(int i = 0;i&lt;list.size();i++){
-        System.out.println(list.get(i).toString());
-    }
-
-
-    JDBCTemplate 三种查询回调接口
-
-          //利用ResultSeltExtractor回调接口
-    List studentList = (List) jdbcTemplate.query(sql,new ResultSetExtractor(){
-
-        @Override
-        public Object extractData(ResultSet resultSet) throws SQLException, DataAccessException {
-            //return null;
-            List students = new ArrayList();
-            while(resultSet.next()){
-                Student student = new Student();
-                student.setId(resultSet.getInt(&quot;id&quot;));
-                System.out.println(&quot;1:&quot;+student.getId());
-                student.setName(resultSet.getString(&quot;name&quot;));
-                System.out.println(&quot;1:&quot;+student.getName());
-                students.add(student);
-            }
-            return students;
-        }
-    });
-
-
-    //利用RowMapper回调接口
-    List studentList = jdbcTemplate.query(sql, new RowMapper() {
-
-        @Override
-        public Object mapRow(ResultSet resultSet, int i) throws SQLException {
-       //     return null;
-            Student student = new Student();
-            student.setName(resultSet.getString(&quot;name&quot;));
-            student.setId(resultSet.getInt(&quot;id&quot;));
-            return  student;
-        }
-    });
-
-    //利用RowCallbackHandler回调接口
-    List studentList = jdbcTemplate.query(sql, new RowMapper() {
-
-        @Override
-        public Object mapRow(ResultSet resultSet, int i) throws SQLException {
-            //
-            Student student = new Student();
-            student.setName(resultSet.getString(&quot;name&quot;));
-            student.setId(resultSet.getInt(&quot;id&quot;));
-            return student;
-        }
-    });
-
-    //sql中带有参数的查询
-    Object[] obj = {new String(&quot;a&quot;)};
-    sql = &quot;SELECT * FROM student WHERE name = ?&quot;;
-    List studentList = (List) jdbcTemplate.query(sql, obj, new ResultSetExtractor() {
-        @Override
-        public List extractData(ResultSet resultSet) throws SQLException, DataAccessException {
-          //  return null;
-            List students = new ArrayList();
-            while(resultSet.next()){
-                Student student = new Student();
-                student.setId(resultSet.getInt(&quot;id&quot;));
-                student.setName(resultSet.getString(&quot;name&quot;));
-                students.add(student);
-            }
-            return students;
-        }
-    });
-    Iterator&lt;Student&gt; it = studentList.iterator();
-    while(it.hasNext()){
-        Student student = it.next();
-        System.out.println(student.getName()+&quot;:&quot;+student.getId());
-    }
-
-       // 直接插入
-    int id = 3;
-    String name = &quot;b&quot;;
-    sql = &quot;INSERT INTO student(id,name) values(&apos;&quot;+id+&quot;&apos;,&apos;&quot;+name+&quot;&apos;)&quot;;
-    jdbcTemplate.update(sql);
-    //重载PreparedStatementSetter
-    jdbcTemplate.update(&quot;insert into student(id,name) values (?,?)&quot;, new PreparedStatementSetter() {
-        @Override
-        public void setValues(PreparedStatement preparedStatement) throws SQLException {
-            preparedStatement.setInt(1,4);
-            preparedStatement.setString(2,&quot;bb&quot;);
-        }
-    });
-
-    //利用Object[]设置SQL参数
-    int id = 5;
-    String name = &quot;zzz&quot;;
-     sql = &quot;insert into student(id,name) values(?,?)&quot;;
-    jdbcTemplate.update(sql,new Object[]{id,name});
-
-    //更新
-    String oldName = &quot;a&quot;;
-    String newName = &quot;aa&quot;;
-    sql = &quot;update student set name = ? WHERE name = ?&quot;;
-    jdbcTemplate.update(sql,new Object[]{newName,oldName});
-    //删除
-    String name = &quot;aa&quot;;
-    sql = &quot;delete from student WHERE name = ?&quot;;
-    jdbcTemplate.update(sql,new Object[]{name});
-     //同时执行多条语句
-    String sql1 = &quot;delete from student WHERE id = 1&quot;;
-    String sql2 = &quot;delete from student WHERE id = 3&quot;;
-    jdbcTemplate.batchUpdate(new String[]{sql1,sql2});
-    //插入20行记录
-    int count = 20;
-    List&lt;Integer&gt; ids = new ArrayList&lt;Integer&gt;(count);
-    List&lt;String&gt; names = new ArrayList&lt;String&gt;(count);
-
-    for(int i = 0;i&lt;count;i++){
-        ids.add(i);
-        names.add(&quot;123&quot;);
-    }
-    sql = &quot;INSERT INTO student (id,name) values(?,?)&quot;;
-    jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
-        @Override
-        public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
-            preparedStatement.setInt(1,ids.get(i));
-            preparedStatement.setString(2,names.get(i));
-        }
-
-        @Override
-        public int getBatchSize() {
-            return count;
-        }
-    });</code></pre>
           
         
       
@@ -1098,7 +1182,7 @@ SPRING中的JDBC利用JDBCTEMPLATE
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  553
+				  530
 				</span>
               
 
@@ -1137,10 +1221,7 @@ SPRING中的JDBC利用JDBCTEMPLATE
       
         
           
-            <p>Spring的博客<br><a href="https://www.cnblogs.com/best/tag/Spring/" target="_blank" rel="noopener">https://www.cnblogs.com/best/tag/Spring/</a></p>
-<p>Aop简单的使用<br><a href="https://www.cnblogs.com/wmyskxz/p/8835243.html" target="_blank" rel="noopener">https://www.cnblogs.com/wmyskxz/p/8835243.html</a></p>
-<p>代理模式：<br>主要是把业务逻辑与一些与业务不相关的代码分离出来</p>
-<p>1：静态代理<br>利用接口的形式(业务逻辑)<br>将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中</p>
+            <p>代理模式：<br>主要是把业务逻辑与一些与业务不相关的代码分离出来<br>1：静态代理<br>利用接口的形式(业务逻辑)<br>将被代理对象放到实现接口的类(包含一些 与业务不相关的代码)中</p>
 <p>2：利用JDK内置的Proxy<br>用一个静态代理类去实现InvocationHandler </p>
 <p>3：利用cglib实现<br>用一个动态代理类去实现MethodInterceptor </p>
 <p>AOP（动态代理的AOP）：<br>前置通知实现MethodBeforeAdvice<br>后置通知实现AfterReturningAdvice<br>环绕童子实现MethodInterceptor<br>//实例化Spring代理工厂<br>ProxyFactory factory=new ProxyFactory();<br>//设置被代理的对象<br>factory.setTarget(new Math());<br>//添加通知，横切逻辑<br>factory.addAdvice(new BeforeAdvice());<br>factory.addAdvice(new AfterAdvice());<br>factory.addAdvice(new SurroundAdvice());<br>//从代理工厂中获得代理对象<br>IMath math=(IMath) factory.getProxy();<br>使用xml配置动态代理的aop</p>
@@ -1225,7 +1306,7 @@ SPRING中的JDBC利用JDBCTEMPLATE
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/19bd81cd/" itemprop="url">Upload Blog</a></h1>
+                <a class="post-title-link" href="/posts/19bd81cd/" itemprop="url">博客操作</a></h1>
         
 
         <div class="post-meta">
@@ -1261,8 +1342,8 @@ SPRING中的JDBC利用JDBCTEMPLATE
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index">
-                    <span itemprop="name">blog</span>
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
                   </a>
                 </span>
 
@@ -1292,7 +1373,7 @@ SPRING中的JDBC利用JDBCTEMPLATE
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  67
+				  137
 				</span>
               
 
@@ -1330,13 +1411,14 @@ SPRING中的JDBC利用JDBCTEMPLATE
 
       
         
-          
-            <p>上传博客<br>hexo new “新的文章”<br>hexo g 生成新的静态文件<br>hexo  d 发布到GitHub</p>
-<p>IDEA上传博客<br><a href="https://blog.csdn.net/woyizhizaizhaoni/article/details/90436721" target="_blank" rel="noopener">https://blog.csdn.net/woyizhizaizhaoni/article/details/90436721</a></p>
-<p>IDEA更新博客<br><a href="https://www.cnblogs.com/igoodful/p/10522026.html" target="_blank" rel="noopener">https://www.cnblogs.com/igoodful/p/10522026.html</a></p>
-<p>hexo上传图片<br><a href="https://www.jianshu.com/p/8d28027fec76" target="_blank" rel="noopener">https://www.jianshu.com/p/8d28027fec76</a><br><a href="https://blog.csdn.net/Mandyucan/article/details/80421711" target="_blank" rel="noopener">https://blog.csdn.net/Mandyucan/article/details/80421711</a></p>
-
-          
+          <p>上传博客<br>hexo new “新的文章”<br>hexo g 生成新的静态文件<br>hexo  d 发布到GitHub<br>在文章的适当位置加这个可以设置阅读全文</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/19bd81cd/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1424,7 +1506,7 @@ SPRING中的JDBC利用JDBCTEMPLATE
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1435,7 +1517,7 @@ SPRING中的JDBC利用JDBCTEMPLATE
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1446,7 +1528,7 @@ SPRING中的JDBC利用JDBCTEMPLATE
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

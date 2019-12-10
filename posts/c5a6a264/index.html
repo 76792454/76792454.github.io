@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="jsckson报错5001:Project Structure2:选择Artifacts3:把Output Layout 右边的Available Elements下的jar put到下 json序列化与反序列化通俗来讲将java对象 -&amp;gt; 字符串（json） 序列化将字符串 -&amp;gt; java对象 反序列化 序列化的框架jackson(如果对象中包含对象 对象中又包含对象 jackson">
+<meta name="description" content="原生Ajaxfunction getXHR(){  //判断是否拥有xhr对象  if(window.XMLHttpRequest){  return new XMLHttpRequest();  }else if(window.ActiveXObject){  //ie6,ie5下的xhr对象获得办法   return new ActiveXObject(“Microsoft.XMLHTTP”)">
 <meta name="keywords" content="ajax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ajax">
 <meta property="og:url" content="http://yoursite.com/posts/c5a6a264/index.html">
 <meta property="og:site_name" content="Wanfeng">
-<meta property="og:description" content="jsckson报错5001:Project Structure2:选择Artifacts3:把Output Layout 右边的Available Elements下的jar put到下 json序列化与反序列化通俗来讲将java对象 -&amp;gt; 字符串（json） 序列化将字符串 -&amp;gt; java对象 反序列化 序列化的框架jackson(如果对象中包含对象 对象中又包含对象 jackson">
+<meta property="og:description" content="原生Ajaxfunction getXHR(){  //判断是否拥有xhr对象  if(window.XMLHttpRequest){  return new XMLHttpRequest();  }else if(window.ActiveXObject){  //ie6,ie5下的xhr对象获得办法   return new ActiveXObject(“Microsoft.XMLHTTP”)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T12:25:49.463Z">
+<meta property="og:updated_time" content="2019-11-29T05:29:17.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax">
-<meta name="twitter:description" content="jsckson报错5001:Project Structure2:选择Artifacts3:把Output Layout 右边的Available Elements下的jar put到下 json序列化与反序列化通俗来讲将java对象 -&amp;gt; 字符串（json） 序列化将字符串 -&amp;gt; java对象 反序列化 序列化的框架jackson(如果对象中包含对象 对象中又包含对象 jackson">
+<meta name="twitter:description" content="原生Ajaxfunction getXHR(){  //判断是否拥有xhr对象  if(window.XMLHttpRequest){  return new XMLHttpRequest();  }else if(window.ActiveXObject){  //ie6,ie5下的xhr对象获得办法   return new ActiveXObject(“Microsoft.XMLHTTP”)">
 
 
 
@@ -369,7 +369,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  313
+				  288
 				</span>
               
 
@@ -406,23 +406,11 @@
       
 
       
-        <p>jsckson报错500<br>1:Project Structure<br>2:选择Artifacts<br>3:把Output Layout 右边的Available Elements下的jar put到<output root>下</output></p>
-<p>json<br>序列化与反序列化通俗来讲<br>将java对象 -&gt; 字符串（json） 序列化<br>将字符串 -&gt; java对象 反序列化</p>
-<p>序列化的框架jackson(如果对象中包含对象 对象中又包含对象 jackson也会自动序列化)<br>序列化方法<br>public static String toJson(Object obj){<br> ObjectMapper objectMapper = new ObjectMapper();<br> String result;<br> result = objectMapper.writeValueAsString(obj);<br> return result;<br>}
-public static <t> toObject(String json,Class<t> valueType){<br> ObjectMapper objectMapper = new ObjectMapper();<br> T result = null;<br> result = objectMapper.readValue(json,valueType);</t></t></p>
-<p> return result;<br>}</p>
-<p>序列化中的日期问题<br>1在日期字段（javabean）中加注解<br>@JsonFormat(locale = “zh”,timezone = “GMT+8”,pattern = “yyyy-MM-dd HH:mm:ss”)<br>2设置SimpleDateFormat<br>SimpleDateFormat dateFormat = new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);<br>ObjectMapper mapper  = new ObjectMapper();</p>
-<p>原生Ajax</p>
-<pre><code>function getXHR(){
-        //判断是否拥有xhr对象
-        if(window.XMLHttpRequest){
-            return new XMLHttpRequest();
-        }else if(window.ActiveXObject){
-            //ie6,ie5下的xhr对象获得办法
-            return new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
-        }
-        return null;
-    }</code></pre><p>ajax序列化表单<br>$.get(“#button”).click(function(){<br>    $.get(“”,$(“#form1”).serialize,function(){</p>
+        <p>原生Ajax<br>function getXHR(){<br>  //判断是否拥有xhr对象<br>  if(window.XMLHttpRequest){<br>  return new XMLHttpRequest();<br>  }else if(window.ActiveXObject){<br>  //ie6,ie5下的xhr对象获得办法<br>   return new ActiveXObject(“Microsoft.XMLHTTP”);<br>    }<br>   return null;<br>}
+function getTime_click(){<br>                var xhr=getXHR();<br>                //当状态变化时的事件<br>                xhr.onreadystatechange=function(){<br>                    if(xhr.readyState==4){  //请求成功<br>                        if(xhr.status==200){  //服务器响应状态成功<br>                            //将从服务器获得的数据显示在页面上<br>                            document.getElementById(“time”).innerHTML= xhr.responseText;<br>                        }<br>                    }<br>                }<br>                //打开请求<br>                xhr.open(“GET”,”GetTime”,true);  //请求类型,路径,是否为异步请求<br>                //发送请求<br>                xhr.send(null);  //参数<br>            }<br>onreadystatechange中的4种readyState<br>存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</p>
+<p>0: 请求未初始化<br>1: 服务器连接已建立<br>2: 请求已接收<br>3: 请求处理中<br>4: 请求已完成，且响应已就绪</p>
+<p>多种status<br>200: “OK”<br>404: 未找到页面</p>
+<p>Jquery中ajax序列化表单<br>$.get(“#button”).click(function(){<br>    $.get(“”,$(“#form1”).serialize,function(){</p>
 <pre><code>});</code></pre><p>});<br>将表单中元素序列化成数组<br>$(“#form”).serializeArray()<br>参数化<br>$.param({a:1,b:3,c:5})//a=1&amp;b=3&amp;c=5</p>
 <p>js中序列化与反序列化<br>序列化<br>JSON.stringify(对象)<br>比如<br>var tom = {name:”汤姆”,age:18};<br>String str = JSON.stringify(tom)</p>
 <p>反序列化：<br>var tomClone = JSON.parse(str);<br>alert(tomClone.name);</p>
@@ -456,8 +444,8 @@ public static <t> toObject(String json,Class<t> valueType){<br> ObjectMapper obj
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/fa32cf69/" rel="next" title="jquery">
-                <i class="fa fa-chevron-left"></i> jquery
+              <a href="/posts/0/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -466,8 +454,8 @@ public static <t> toObject(String json,Class<t> valueType){<br> ObjectMapper obj
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/5eaef6f6/" rel="prev" title="JAVAutils">
-                JAVAutils <i class="fa fa-chevron-right"></i>
+              <a href="/posts/5eaef6f6/" rel="prev" title="java工具类">
+                java工具类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -538,7 +526,7 @@ public static <t> toObject(String json,Class<t> valueType){<br> ObjectMapper obj
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -549,7 +537,7 @@ public static <t> toObject(String json,Class<t> valueType){<br> ObjectMapper obj
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -560,7 +548,7 @@ public static <t> toObject(String json,Class<t> valueType){<br> ObjectMapper obj
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="https://www.yiibai.com/spring_mvc 1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据">
+<meta name="description" content="1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:Dispa">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC">
 <meta property="og:url" content="http://yoursite.com/posts/ae0f95e0/index.html">
 <meta property="og:site_name" content="Wanfeng">
-<meta property="og:description" content="https://www.yiibai.com/spring_mvc 1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据">
+<meta property="og:description" content="1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:Dispa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-08T15:05:18.719Z">
+<meta property="og:updated_time" content="2019-11-17T13:13:37.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC">
-<meta name="twitter:description" content="https://www.yiibai.com/spring_mvc 1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据">
+<meta name="twitter:description" content="1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:Dispa">
 
 
 
@@ -371,7 +371,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  614
+				  609
 				</span>
               
 
@@ -408,8 +408,7 @@
       
 
       
-        <p><a href="https://www.yiibai.com/spring_mvc" target="_blank" rel="noopener">https://www.yiibai.com/spring_mvc</a></p>
-<p>1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：<br>在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller<br>2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定<br>义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet<br>3:DispatcherServlet将从ViewResolver获取请求的定义视图。<br>4:当视图完成，DispatcherServlet将模型数据传递到最终的视图，并在浏览器上呈现。<br>这些Controller需要在 mvc-dispatcher-servlet.xml中注册 比如视图解析器</p>
+        <p>1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：<br>在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller<br>2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定<br>义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet<br>3:DispatcherServlet将从ViewResolver获取请求的定义视图。<br>4:当视图完成，DispatcherServlet将模型数据传递到最终的视图，并在浏览器上呈现。<br>这些Controller需要在 mvc-dispatcher-servlet.xml中注册 比如视图解析器</p>
 <p>所有上述组件，即: HandlerMapping，Controller和ViewResolver是WebApplicationContext的一部分，它是普通ApplicationContext的扩展，带有Web应用程序所需的一些额外功能。<br>&lt;context:component-scan base-package=”com.yiibai.springmvc” /&gt; //声明要扫描的包</p>
 <p>//处理视图的类<br>//第2行声明呈现视图的文件(比如jsp)的前缀位置<br>//第3行说明文件的后缀<br>&lt;bean<br>    1  class=”org.springframework.web.servlet.view.InternalResourceViewResolver”&gt;<br>    2   <property name="prefix" value="/WEB-INF/jsp/"><br>    3   <property name="suffix" value=".jsp"><br></property></property></p>
 <p>最后把Spring框架整合到Web应用中</p>
@@ -565,7 +564,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -576,7 +575,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -587,7 +586,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

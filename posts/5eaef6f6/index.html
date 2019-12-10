@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="工具类,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="后端 算法">
-<meta name="keywords" content="后端 算法">
+<meta name="description" content="JacksonUtils序列化工具类">
+<meta name="keywords" content="工具类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVAutils">
+<meta property="og:title" content="java工具类">
 <meta property="og:url" content="http://yoursite.com/posts/5eaef6f6/index.html">
 <meta property="og:site_name" content="Wanfeng">
-<meta property="og:description" content="后端 算法">
+<meta property="og:description" content="JacksonUtils序列化工具类">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T12:25:49.460Z">
+<meta property="og:updated_time" content="2019-11-17T13:14:19.308Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVAutils">
-<meta name="twitter:description" content="后端 算法">
+<meta name="twitter:title" content="java工具类">
+<meta name="twitter:description" content="JacksonUtils序列化工具类">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>JAVAutils | Wanfeng</title>
+  <title>java工具类 | Wanfeng</title>
   
 
 
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JAVAutils</h1>
+          <h1 class="post-title" itemprop="name headline">java工具类</h1>
         
 
         <div class="post-meta">
@@ -347,7 +347,7 @@
 				  <span class="post-meta-item-text">Words count in article&#58;</span>
 				
 				<span title="Words count in article">
-				  0
+				  130
 				</span>
               
 
@@ -384,7 +384,37 @@
       
 
       
-        
+        <p>JacksonUtils序列化工具类</p>
+<a id="more"></a>
+<p>import java.text.SimpleDateFormat;<br>import com.fasterxml.jackson.core.JsonProcessingException;<br>import com.fasterxml.jackson.databind.ObjectMapper;</p>
+<p>public class JsonUtils {<br>    /**
+     * 序列化成json<br>     * */<br>    public static String toJson(Object obj) {<br>        // 对象映射器<br>        ObjectMapper mapper = new ObjectMapper();<br>        SimpleDateFormat sdf = new SimpleDateFormat(“yyyy年MM月dd HH:mm:ss”);<br>        mapper.setDateFormat(sdf);</p>
+<pre><code>    String result = null;
+    // 序列化user对象为json字符串
+    try {
+        result = mapper.writeValueAsString(obj);
+    } catch (JsonProcessingException e) {
+        e.printStackTrace();
+    }
+    return result;
+}
+
+/**
+ * 反序列化成对象
+ * */
+public static &lt;T&gt; T toObject(String json,Class&lt;T&gt; valueType) {
+    //对象映射器
+    ObjectMapper mapper=new ObjectMapper();
+    T result=null;
+    try {
+        result=mapper.readValue(json,valueType);
+
+    }catch (Exception e) {
+        e.printStackTrace();
+    }
+    return result;
+}</code></pre><p>}</p>
+
       
     </div>
     
@@ -398,6 +428,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具类/" rel="tag"># 工具类</a>
+          
+        </div>
       
 
       
@@ -418,8 +454,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/b6f7494e/" rel="prev" title="question">
-                question <i class="fa fa-chevron-right"></i>
+              <a href="/posts/b6f7494e/" rel="prev" title="问题">
+                问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -490,7 +526,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -501,7 +537,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -512,7 +548,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

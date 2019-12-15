@@ -287,6 +287,540 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/12cb9b35/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晚风">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wanfeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/12cb9b35/" itemprop="url">Mavenjar包</a></h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-06T12:12:09+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MavenJar/" itemprop="url" rel="index">
+                    <span itemprop="name">MavenJar</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+					 
+				<span class="post-meta-item-icon">
+				  <i class="fa fa-file-word-o"></i>
+				</span>
+				
+				  <span class="post-meta-item-text">Words count in article&#58;</span>
+				
+				<span title="Words count in article">
+				  918
+				</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+               <dependency>
+      <groupid>org.slf4j</groupid>
+      <artifactid>slf4j-api</artifactid>
+      <version>1.7.12</version>
+    </dependency>
+    <dependency>
+      <groupid>ch.qos.logback</groupid>
+      <artifactid>logback-core</artifactid>
+      <version>1.1.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+<pre><code>&lt;!--实现slf4j接口并整合--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+  &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;
+  &lt;version&gt;1.1.1&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!--druid==&gt;阿里巴巴数据库连接池--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+  &lt;artifactId&gt;druid&lt;/artifactId&gt;
+  &lt;version&gt;1.0.25&lt;/version&gt;
+&lt;/dependency&gt;
+  &lt;!-- C3p0数据连接池--&gt;
+  &lt;dependency&gt;
+      &lt;groupId&gt;com.mchange&lt;/groupId&gt;
+      &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
+      &lt;version&gt;0.9.5.2&lt;/version&gt;
+  &lt;/dependency&gt;
+
+ !--2.dao框架:MyBatis依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+  &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+  &lt;version&gt;3.3.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!--mybatis自身实现的spring整合依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+  &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+  &lt;version&gt;1.3.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+ &lt;!--3.Servlet web相关依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;taglibs&lt;/groupId&gt;
+  &lt;artifactId&gt;standard&lt;/artifactId&gt;
+  &lt;version&gt;1.1.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;jstl&lt;/groupId&gt;
+  &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+  &lt;version&gt;1.2&lt;/version&gt;
+
+&lt;/dependency&gt;
+&lt;!--servlet--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+  &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+  &lt;version&gt;3.1.0&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+  &lt;/dependency&gt;
+  &lt;!--4:spring依赖--&gt;
+&lt;!--1)spring核心依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+ &lt;!--2)spring dao层依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+  &lt;!--3)springweb相关依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+ &lt;!--4)spring test相关依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
+  &lt;version&gt;4.3.14.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;mysql&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+  &lt;version&gt;8.0.12&lt;/version&gt;
+  &lt;scope&gt;runtime&lt;/scope&gt;
+&lt;/dependency&gt;
+
+ &lt;!--Aop要导入的包--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+  &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
+  &lt;version&gt;1.8.9&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/org.json/json --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.json&lt;/groupId&gt;
+  &lt;artifactId&gt;json&lt;/artifactId&gt;
+  &lt;version&gt;20170516&lt;/version&gt;
+&lt;/dependency&gt;
+jackson
+    &lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+        &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+        &lt;version&gt;2.9.9.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+        &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;
+        &lt;version&gt;2.9.8&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+        &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;
+        &lt;version&gt;2.9.9&lt;/version&gt;
+    &lt;/dependency&gt;
+    java文件上传
+    &lt;!-- https://mvnrepository.com/artifact/commons-io/commons-io --&gt;</code></pre><dependency>
+    <groupid>commons-io</groupid>
+    <artifactid>commons-io</artifactid>
+    <version>2.4</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+<dependency>
+    <groupid>commons-fileupload</groupid>
+    <artifactid>commons-fileupload</artifactid>
+    <version>1.3.3</version>
+</dependency>
+<!--富文本编辑器需要用的-->
+ <dependency>
+            <groupid>com.googlecode.json-simple</groupid>
+            <artifactid>json-simple</artifactid>
+            <version>1.1</version>
+        </dependency>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/1d1f67ca/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晚风">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wanfeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/1d1f67ca/" itemprop="url">SpringMybatis</a></h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-06T12:06:59+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringMybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringMybatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+					 
+				<span class="post-meta-item-icon">
+				  <i class="fa fa-file-word-o"></i>
+				</span>
+				
+				  <span class="post-meta-item-text">Words count in article&#58;</span>
+				
+				<span title="Words count in article">
+				  368
+				</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Spring简单整合Mybatis<br>1：在Pom.xml添加Spring核心，AOP，JDBC，MyBatis-Spring，Mybatis等jar包。<br>2：实现db.properties数据库配置文件 MybatisConf.xml Mybatis配置文件 Mapper映射文件<br>3：创建Pojo 数据访问接口 数据访问接口实现类<br>4：配置SpringConf.xml 配置Spring配置文件<br>MybatisConf.xml可以不加<environments>标签<br>具体SpringConf.xml文件<br><?xml version="1.0" encoding="UTF-8"?><br><beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xsi:schemalocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"><br>    <!--声明使用数据库配置文件 文件的位置--><br>    &lt;context:property-placeholder location=”db.properties” /&gt;<br>    <!--数据库连接池--><br>    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"><br>        <property name="driverClass" value="${mysql.driver}"><br>        <property name="jdbcUrl" value="${mysql.url}"><br>        <property name="user" value="${mysql.username}"><br>        <property name="password" value="${mysql.password}"><br>        <!-- 初始连接池大小 --><br>        <property name="initialPoolSize" value="10"><br>        <!-- 连接池中连接最小个数 --><br>        <property name="minPoolSize" value="5"><br>        <property name="maxPoolSize" value="20"><br>    </property></property></property></property></property></property></property></bean><br>    <!-- 配置SqlSessionFactory对象 --><br>    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"><br>        <!-- 注入数据库连接池 --><br>        <property name="dataSource" ref="dataSource"><br>        &lt;!–注入MybatisConf.xml文件 value为文件的位置&gt;<br>        <property name="configLocation" value="mybatisConf.xml"></property></property></bean></beans></environments></p>
+<pre><code>&lt;/bean&gt;
+&lt;!--配置映射器--&gt;
+&lt;bean id=&quot;userMapper&quot; class=&quot;org.mybatis.spring.mapper.MapperFactoryBean&quot;&gt;
+    &lt;!--实现mapper的接口（自己写的）--&gt;
+    &lt;property name=&quot;mapperInterface&quot; value=&quot;dao.UserMapper&quot;/&gt;
+    &lt;property name=&quot;sqlSessionFactory&quot; ref=&quot;sqlSessionFactory&quot;/&gt;
+&lt;/bean&gt;</code></pre>
+
+<p>主函数调用<br>   ApplicationContext acx = new ClassPathXmlApplicationContext(“SpringConf.xml”);<br>        //这里的UserMapper为接口类<br>       UserMapper userMapper = (UserMapper) acx.getBean(“userMapper”);<br>        User user = userMapper.getUserById(1);</p>
+<pre><code>System.out.println(user);</code></pre><hr>
+<p>Spring整合Mybatis升级版 去掉MyBatisCfg.xml配置文件<br>只需要修改Spring配置文件里的SqlSessionFactory添加<br>        <!--指定类型别名--><br>        <property name="typeAliasesPackage" value="entity"><br>        &lt;!–指定映射文件<br>        <property name="mapperLocations" value="mapper/userMapper.xml"></property><br>        &lt;!–如果是注解实现的映射那么配置mapperLocations改为<br>        <property name="mapperLocations" value="classpath:dao/UserMapper.java"></property></property></p>
+<pre><code>    &lt;!--自动扫描映射接口   把Mapper标签改为--&gt;
+   &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;!-- 指定sql会话工厂，在上面配置过的 --&gt;
+    &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;&gt;&lt;/property&gt;
+    &lt;!-- 指定基础包，即自动扫描com.zhangguo.Spring61.mapping这个包以及它的子包下的所有映射接口类 --&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.zhangguo.Spring61.mapping&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/18d6d006/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1506,7 +2040,7 @@ System.out.println(result);</code></pre><p>  }<br>}
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1517,7 +2051,7 @@ System.out.println(result);</code></pre><p>  }<br>}
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

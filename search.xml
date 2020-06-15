@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode]]></title>
+    <url>%2Fposts%2F6096f3d5%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[设计模式]]></title>
+    <url>%2Fposts%2F364ea8cc%2F</url>
+    <content type="text"><![CDATA[https://blog.csdn.net/LoveLion/article/details/17517213?utm_source=blogxgwz0]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java多线程]]></title>
     <url>%2Fposts%2Fa2c3ad19%2F</url>
     <content type="text"></content>
@@ -54,7 +76,7 @@
   <entry>
     <title><![CDATA[java工具类]]></title>
     <url>%2Fposts%2F5eaef6f6%2F</url>
-    <content type="text"><![CDATA[JacksonUtils序列化工具类 import java.text.SimpleDateFormat;import com.fasterxml.jackson.core.JsonProcessingException;import com.fasterxml.jackson.databind.ObjectMapper; public class JsonUtils { /** * 序列化成json * */ public static String toJson(Object obj) { // 对象映射器 ObjectMapper mapper = new ObjectMapper(); SimpleDateFormat sdf = new SimpleDateFormat(“yyyy年MM月dd HH:mm:ss”); mapper.setDateFormat(sdf); String result = null; // 序列化user对象为json字符串 try { result = mapper.writeValueAsString(obj); } catch (JsonProcessingException e) { e.printStackTrace(); } return result; } /** * 反序列化成对象 * */ public static &lt;T&gt; T toObject(String json,Class&lt;T&gt; valueType) { //对象映射器 ObjectMapper mapper=new ObjectMapper(); T result=null; try { result=mapper.readValue(json,valueType); }catch (Exception e) { e.printStackTrace(); } return result; }}]]></content>
+    <content type="text"><![CDATA[JacksonUtils序列化工具类import java.text.SimpleDateFormat;import com.fasterxml.jackson.core.JsonProcessingException;import com.fasterxml.jackson.databind.ObjectMapper; public class JsonUtils { /** * 序列化成json * */ public static String toJson(Object obj) { // 对象映射器 ObjectMapper mapper = new ObjectMapper(); SimpleDateFormat sdf = new SimpleDateFormat(“yyyy年MM月dd HH:mm:ss”); mapper.setDateFormat(sdf); String result = null; // 序列化user对象为json字符串 try { result = mapper.writeValueAsString(obj); } catch (JsonProcessingException e) { e.printStackTrace(); } return result; } /** * 反序列化成对象 * */ public static &lt;T&gt; T toObject(String json,Class&lt;T&gt; valueType) { //对象映射器 ObjectMapper mapper=new ObjectMapper(); T result=null; try { result=mapper.readValue(json,valueType); }catch (Exception e) { e.printStackTrace(); } return result; }}]]></content>
       <tags>
         <tag>工具类</tag>
       </tags>
@@ -98,17 +120,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[SpringMybatis]]></title>
-    <url>%2Fposts%2F1d1f67ca%2F</url>
-    <content type="text"><![CDATA[Spring简单整合Mybatis1：在Pom.xml添加Spring核心，AOP，JDBC，MyBatis-Spring，Mybatis等jar包。2：实现db.properties数据库配置文件 MybatisConf.xml Mybatis配置文件 Mapper映射文件3：创建Pojo 数据访问接口 数据访问接口实现类4：配置SpringConf.xml 配置Spring配置文件MybatisConf.xml可以不加标签具体SpringConf.xml文件 &lt;context:property-placeholder location=”db.properties” /&gt; &lt;!–注入MybatisConf.xml文件 value为文件的位置&gt; &lt;/bean&gt; &lt;!--配置映射器--&gt; &lt;bean id=&quot;userMapper&quot; class=&quot;org.mybatis.spring.mapper.MapperFactoryBean&quot;&gt; &lt;!--实现mapper的接口（自己写的）--&gt; &lt;property name=&quot;mapperInterface&quot; value=&quot;dao.UserMapper&quot;/&gt; &lt;property name=&quot;sqlSessionFactory&quot; ref=&quot;sqlSessionFactory&quot;/&gt; &lt;/bean&gt; 主函数调用 ApplicationContext acx = new ClassPathXmlApplicationContext(“SpringConf.xml”); //这里的UserMapper为接口类 UserMapper userMapper = (UserMapper) acx.getBean(“userMapper”); User user = userMapper.getUserById(1); System.out.println(user); Spring整合Mybatis升级版 去掉MyBatisCfg.xml配置文件只需要修改Spring配置文件里的SqlSessionFactory添加 &lt;!–指定映射文件 &lt;!–如果是注解实现的映射那么配置mapperLocations改为 &lt;!--自动扫描映射接口 把Mapper标签改为--&gt; &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt; &lt;!-- 指定sql会话工厂，在上面配置过的 --&gt; &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;&gt;&lt;/property&gt; &lt;!-- 指定基础包，即自动扫描com.zhangguo.Spring61.mapping这个包以及它的子包下的所有映射接口类 --&gt; &lt;property name=&quot;basePackage&quot; value=&quot;com.zhangguo.Spring61.mapping&quot;&gt;&lt;/property&gt; &lt;/bean&gt;]]></content>
-      <categories>
-        <category>SpringMybatis</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[springLoc]]></title>
     <url>%2Fposts%2F18d6d006%2F</url>
     <content type="text"><![CDATA[使用注解配置Bean在POJO的上边配置@Component在Spring配置文件中在那个包下扫描带有注解的bean&lt;context:component-scan base-package=””/&gt;具体的在某个包下排除某个类看博客 自动装配@Autowired在容器中的bean中根据类型自动注入值也可也和@Qualifier(“XXX”)配合使用 XXX代表bean的名字@Resource装配顺序 如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常 如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常 如果指定了type，则从上下文中找到类型匹配的唯一bean进行装配，找不到或者找到多个，都会抛出异常 如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配； 纯注解配置loc 1：定义数据库访问接口/** 图书数据访问接口 / public interface IBookDAO { /** 添加图书 / public String addBook(String bookname);} 2：实现数据库接口/** 图书数据访问实现类 / @Repositorypublic class BookDAO implements IBookDAO { public String addBook(String bookname) { return &quot;添加图书&quot;+bookname+&quot;成功！&quot;; }} 3：service类/** 图书业务类 / @Servicepublic class BookService { @Resource IBookDAO bookDAO; public void storeBook(String bookname){ System.out.println(&quot;图书上货&quot;); String result=bookDAO.addBook(bookname); System.out.println(result); }} 4：定义一个替代xml的ApplicationCfg容器类/** 容器的配置类 / @Configuration@ComponentScan(basePackages=”com.zhangguo.Spring051.ioc06”)public class ApplicationCfg { @Bean public User getUser(){ return new User(&quot;成功&quot;); }} @Configuration相当于配置文件中的，ComponentScan相当于配置文件中的context:component-scan，属性也一样设置 ,@Bean相当于，只能注解在方法和注解上，一般在方法上使用，源码中描述：@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})，方法名相当于id。中间使用到了User，User类的代码如下：5：数据访问 ApplicationContext ctx=new AnnotationConfigApplicationContext(ApplicationCfg.class); BookService bookservice=ctx.getBean(BookService.class); bookservice.storeBook(“《Spring MVC权威指南 第四版》”);具体的参考博客]]></content>
@@ -133,7 +144,7 @@
   <entry>
     <title><![CDATA[SpringMVC]]></title>
     <url>%2Fposts%2Fae0f95e0%2F</url>
-    <content type="text"><![CDATA[1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:DispatcherServlet将从ViewResolver获取请求的定义视图。4:当视图完成，DispatcherServlet将模型数据传递到最终的视图，并在浏览器上呈现。这些Controller需要在 mvc-dispatcher-servlet.xml中注册 比如视图解析器 所有上述组件，即: HandlerMapping，Controller和ViewResolver是WebApplicationContext的一部分，它是普通ApplicationContext的扩展，带有Web应用程序所需的一些额外功能。&lt;context:component-scan base-package=”com.yiibai.springmvc” /&gt; //声明要扫描的包 //处理视图的类//第2行声明呈现视图的文件(比如jsp)的前缀位置//第3行说明文件的后缀&lt;bean 1 class=”org.springframework.web.servlet.view.InternalResourceViewResolver”&gt; 2 3 最后把Spring框架整合到Web应用中 mvc-dispatcher org.springframework.web.servlet.DispatcherServlet 1//指定启动顺序 1为该servlet会随着servlet容器一起启动 mvc-dispatcher 表示分发器要拦截的请求 比如 / , *.do ，/hello.jsp 拦截所以,拦截所有以do为后缀的文件,拦截hello.jsp 设置bean定义文件的位置和名称 (也就是Controller配置的位置和文件名称)/WEB-INF/mvc-dispatcher-servlet.xml 设置监听器 org.springframework.web.context.ContextLoaderListener HelloController.class @Controller@RequestMapping(“/welcome”) //说明访问的urlpublic class HelloController{ @RequestMapping(Method = RequestMethod.GET)声明请求的方法 public String printWelcome(ModelMap model){ model.addAttribute(“message”,”Hello world”); //在jsp中可以通过 ${message} 得到该值 return “hello”; //把处理结果交给hello.jsp 显示 }} hello.jsp Hello ${message} ————————————————————————————————————————————————————————————————————————————Controller的返回View和Model的函数@RequestMapping(value = “/student”, method = RequestMethod.GET) public ModelAndView student() { return new ModelAndView(“student”, “command”, new Student()); }例如这个例子返回给student.jsp form:form 需要command的这个对象 name和new Student的name是绑定在一起的如果给new Student的name赋值那么student.jsp 会显示他的值前提是student得有name这个变量student.jsp public String action11(Model model){ //向模型中添加一个名为product的对象，用于渲染视图 model.addAttribute(“product”, new Product(“Meizu note1”, 999)); return “bar/action11”; } product为Controller传来的Modelbody&gt; &lt;form:form modelAttribute=”product”&gt; 名称： &lt;form:input path=”name” /&gt; 价格： &lt;form:input path=”price” /&gt; &lt;form:input path=”name” /&gt; 相当于 SpringMvc不进入Controller的可能性之一：方法上没加@RequestMapper（）]]></content>
+    <content type="text"><![CDATA[1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:DispatcherServlet将从ViewResolver获取请求的定义视图。4:当视图完成，DispatcherServlet将模型数据传递到最终的视图，并在浏览器上呈现。这些Controller需要在 mvc-dispatcher-servlet.xml中注册 比如视图解析器 所有上述组件，即: HandlerMapping，Controller和ViewResolver是WebApplicationContext的一部分，它是普通ApplicationContext的扩展，带有Web应用程序所需的一些额外功能。&lt;context:component-scan base-package=”com.yiibai.springmvc” /&gt; //声明要扫描的包 //处理视图的类//第2行声明呈现视图的文件(比如jsp)的前缀位置//第3行说明文件的后缀&lt;bean 1 class=”org.springframework.web.servlet.view.InternalResourceViewResolver”&gt; 2 3 最后把Spring框架整合到Web应用中 mvc-dispatcher org.springframework.web.servlet.DispatcherServlet 1//指定启动顺序 1为该servlet会随着servlet容器一起启动 mvc-dispatcher 表示分发器要拦截的请求 比如 / , *.do ，/hello.jsp 拦截所以,拦截所有以do为后缀的文件,拦截hello.jsp 设置bean定义文件的位置和名称 (也就是Controller配置的位置和文件名称)/WEB-INF/mvc-dispatcher-servlet.xml 设置监听器 org.springframework.web.context.ContextLoaderListener HelloController.class @Controller@RequestMapping(“/welcome”) //说明访问的urlpublic class HelloController{ @RequestMapping(Method = RequestMethod.GET)声明请求的方法 public String printWelcome(ModelMap model){ model.addAttribute(“message”,”Hello world”); //在jsp中可以通过 ${message} 得到该值 return “hello”; //把处理结果交给hello.jsp 显示 }} hello.jsp Hello ${message} Controller的返回View和Model的函数@RequestMapping(value = “/student”, method = RequestMethod.GET) public ModelAndView student() { return new ModelAndView(“student”, “command”, new Student()); }例如这个例子返回给student.jsp form:form 需要command的这个对象 name和new Student的name是绑定在一起的如果给new Student的name赋值那么student.jsp 会显示他的值前提是student得有name这个变量student.jsp public String action11(Model model){ //向模型中添加一个名为product的对象，用于渲染视图 model.addAttribute(“product”, new Product(“Meizu note1”, 999)); return “bar/action11”; } product为Controller传来的Modelbody&gt; &lt;form:form modelAttribute=”product”&gt; 名称： &lt;form:input path=”name” /&gt; 价格： &lt;form:input path=”price” /&gt; &lt;form:input path=”name” /&gt; 相当于 SpringMvc不进入Controller的可能性之一：方法上没加@RequestMapper（）]]></content>
       <categories>
         <category>SpringMVC</category>
       </categories>

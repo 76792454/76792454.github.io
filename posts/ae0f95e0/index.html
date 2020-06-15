@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Wanfeng">
 <meta property="og:description" content="1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:Dispa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T13:13:37.475Z">
+<meta property="og:updated_time" content="2019-12-18T10:27:24.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC">
 <meta name="twitter:description" content="1:以下是对应于到DispatcherServlet的传入HTTP请求的事件顺序：在接收到HTTP请求后，DispatcherServlet会查询HandlerMapping以调用相应的Controller2:Controller接受请求并根据使用的GET或POST方法调用相应的服务方法。 服务方法将基于定义的业务逻辑设置模型数据，并将视图名称返回给DispatcherServlet3:Dispa">
@@ -436,7 +436,7 @@
 </body>
 </html>
 
-<p>————————————————————————————————————————————————————————————————————————————<br>Controller的返回View和Model的函数<br>@RequestMapping(value = “/student”, method = RequestMethod.GET)<br>   public ModelAndView student() {<br>      return new ModelAndView(“student”, “command”, new Student());<br>  }<br>例如这个例子返回给student.jsp <a href="form:form" target="_blank" rel="noopener">form:form</a> 需要command的这个对象 name和new Student的name是绑定在一起的<br>如果给new Student的name赋值那么student.jsp 会显示他的值前提是student得有name这个变量<br>student.jsp</p>
+<p>Controller的返回View和Model的函数<br>@RequestMapping(value = “/student”, method = RequestMethod.GET)<br>   public ModelAndView student() {<br>      return new ModelAndView(“student”, “command”, new Student());<br>  }<br>例如这个例子返回给student.jsp <a href="form:form" target="_blank" rel="noopener">form:form</a> 需要command的这个对象 name和new Student的name是绑定在一起的<br>如果给new Student的name赋值那么student.jsp 会显示他的值前提是student得有name这个变量<br>student.jsp</p>
 <p>  public String action11(Model model){<br>        //向模型中添加一个名为product的对象，用于渲染视图<br>        model.addAttribute(“product”, new Product(“Meizu note1”, 999));<br>        return “bar/action11”;<br>    }</p>
 <p>product为Controller传来的Model<br>body&gt;<br>    &lt;form:form modelAttribute=”product”&gt;<br>        </p><p><br>            <label for="name">名称：</label><br>            &lt;form:input path=”name” /&gt;<br>        </p><br>        <p><br>            <label for="price">价格：</label><br>            &lt;form:input path=”price” /&gt;<br>        </p><br>    <p></p>
 <p>&lt;form:input path=”name” /&gt; 相当于<input id="name" name="name" type="text" value></p>
@@ -564,7 +564,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -575,7 +575,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -586,7 +586,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -649,7 +649,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
